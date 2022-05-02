@@ -46,7 +46,7 @@ function Cards() {
               src='images/school4.jpg'
               text='See all, read all, know all'
               label='All activities'
-              path='/sign-up'
+              path='/'
             />
           </ul>
         </div>

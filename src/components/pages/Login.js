@@ -82,9 +82,6 @@ return (
 
 <form>
 {/* Labels and inputs for form data */}
-<label className="label">Full Name</label>
-<input onChange={handleName} className="input"
-value={name} type="text" placeholder='Enter your name here ...' />
 
 <label className="label">Email</label>
 <input onChange={handleEmail} className="input"
@@ -99,7 +96,7 @@ Submit
 </button>
 </form>
 <hr /><br />
- <p className='login-text>'>Already have an account? &nbsp; <span>Sign in</span></p>
+ <p className='login-text>'>Don't have an account? &nbsp; <span>Sign Up</span></p>
 </div>
 );
 }

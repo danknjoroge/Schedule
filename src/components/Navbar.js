@@ -61,17 +61,17 @@ function Navbar() {
 
             <li className='nav-item'>
               <Link
-                to='/products'
+                to='/login'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Logout
+                Login
               </Link>
             </li>
 
             <li className='btn-signup'>
               <Link
-                to='/sign-up'
+                to='/Signup'
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
@@ -79,8 +79,8 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {/* {button && <Button className='signup' buttonStyle='btn--outline'>SIGN UP</Button>} */}
-          <button className='signup'>Sign Up</button>
+          {button && <Button className='signup' buttonStyle='btn--outline'>SIGN UP</Button>}
+        
         </div>
       </nav>
     </>

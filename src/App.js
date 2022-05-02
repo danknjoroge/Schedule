@@ -7,6 +7,7 @@ import Student from './components/pages/Student';
 import Products from './components/pages/Products';
 import SignUp from './components/pages/SignUp';
 import Announcement from './components/pages/Announcement';
+import Login from './components/pages/Login';
 
 function App() {
   return (
@@ -16,9 +17,10 @@ function App() {
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/products' component={Products} />
-          <Route path='/sign-up' component={SignUp} />
+          <Route path='/signup' component={SignUp} />
           <Route path='/announcement' component={Announcement} />
           <Route path='/student' component={Student} />
+          <Route path='/login' component={Login} />
         </Switch>
       </Router>
     </>
