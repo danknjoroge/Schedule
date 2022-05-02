@@ -26,7 +26,7 @@ function Cards() {
               src='images/school1.jpg'
               text='See notifications here'
               label='Announcements'
-              path='/sign-up'
+              path='/announcement'
             />
           </ul>
           <ul className='cards__items'>
