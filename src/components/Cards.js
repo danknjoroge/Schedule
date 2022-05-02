@@ -14,7 +14,7 @@ function Cards() {
               src='images/student1.jpg'
               text='Join the family'
               label='Students Dashboard'
-              path='/services'
+              path='/student'
             />
             <CardItem
               src='images/student2.jpg'
