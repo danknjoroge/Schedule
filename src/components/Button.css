@@ -2,7 +2,7 @@
   --primary: #fff;
 }
 
-.btn {
+.btn-1 {
   padding: 8px 20px;
   border-radius: 2px;
   outline: none;
@@ -27,11 +27,14 @@
 .btn--medium {
   padding: 8px 20px;
   font-size: 18px;
+  margin-top: -40px;
 }
 
 .btn--large {
   padding: 12px 26px;
   font-size: 20px;
+  outline: none;
+  border: none;
 }
 
 .btn--large:hover,
@@ -40,4 +43,6 @@
   background: #fff;
   color: #242424;
   transition: 250ms;
+  border-radius: 30px;
+  
 }

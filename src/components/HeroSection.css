@@ -32,15 +32,15 @@ video {
     'Lucida Sans', Arial, sans-serif;
 }
 
-.hero-btns {
+.hero-buttons {
   margin-top: 32px;
+  border-radius: 30px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  margin-top: 150px;
 }
 
-.hero-btns .btn1 {
-  margin: 6px;
-  border-radius: 30px;
-  background-color: #18183D;
-}
+
 
 .hero-btns .btn {
   margin: 6px;
@@ -51,10 +51,14 @@ video {
   margin-left: 4px;
 }
 
+.hero-container > h1 {
+  position: absolute;
+  color: white;
+}
+
 @media screen and (max-width: 960px) {
   .hero-container > h1 {
     font-size: 30px;
-    margin-top: -150px;
   }
 }
 

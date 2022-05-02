@@ -33,8 +33,8 @@ function Cards() {
             <CardItem
               src='images/school2.jpg'
               text='Check out all students sessions for the module'
-              label='Students Sessions'
-              path='/services'
+              label='Sessions'
+              path='/session'
             />
             <CardItem
               src='images/student3.jpg'

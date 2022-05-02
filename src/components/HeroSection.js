@@ -8,22 +8,22 @@ function HeroSection() {
     <div className='hero-container'>
       <video src='/videos/video-3.mp4' autoPlay loop muted />
       <h1>Our next classes start in June</h1>
-      <div className='hero-btns'>
+      <div className='hero-buttons'>
         <Button
-          className='btns'
+          className='button'
           buttonStyle='btn--outline'
           buttonSize='btn--large'
         >
           Join Today
         </Button>
-        <Button
-          className='btns'
+        {/* <Button
+          className='button'
           buttonStyle='btn--primary'
           buttonSize='btn--large'
         
         >
           Subscribe To our Newsletter <i class="material-icons"></i>
-        </Button>
+        </Button> */}
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import Products from './components/pages/Products';
 import SignUp from './components/pages/SignUp';
 import Announcement from './components/pages/Announcement';
 import Login from './components/pages/Login';
+import Session from './components/pages/Session';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/announcement' component={Announcement} />
           <Route path='/student' component={Student} />
           <Route path='/login' component={Login} />
+          <Route path='/session' component={Session} />
         </Switch>
       </Router>
     </>
