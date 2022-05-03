@@ -1,0 +1,332 @@
+.BodyGroupRoot{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  min-width: 1126px;
+}
+
+.Element1{
+  width: 490.59px;
+  height: 266px;
+  position: relative;
+  flex-grow: 1;
+  margin: 0px 36.41px 0px 0px;
+}
+
+.Element2{
+  width: 232px;
+  height: 258px;
+  position: absolute;
+  top: 4px;
+  left: 258.59px;
+}
+
+.Element3{
+  width: 232px;
+  height: 76px;
+  position: absolute;
+}
+
+.SilverFlexRow {
+  height: 27.2px;
+  background-color: #c4c4c4;
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  align-items: center;
+  padding: 16.29px 49.35px 32.51px 36.65px;
+}
+
+.Text1{
+  width: 143px;
+  height: 27.2px;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 700;
+}
+.Image1{
+  width: 48.9px;
+  height: 65.2px;
+  position: absolute;
+  top: 5.43px;
+  left: 183.21px;
+}
+.WhiteRectangle{
+  border-width: 1px;
+  border-color: #000000;
+  border-style: solid;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 227px;
+  height: 180px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 75.04px;
+  left: -1px;
+}
+
+.Text2{
+  width: 182px;
+  height: 40.1px;
+  font-size: 32px;
+  font-family: Inter;
+  font-weight: 700;
+  position: absolute;
+  top: 22.33px;
+  left: 27.51px;
+}
+.Text3{
+  width: 182px;
+  height: 40.1px;
+  font-size: 32px;
+  font-family: Inter;
+  font-weight: 700;
+  position: absolute;
+  top: 74.58px;
+  left: 20.38px;
+}
+.Deletesvgrepocom{
+  width: 40.7px;
+  height: 37.3px;
+  position: absolute;
+  top: 60.59px;
+  left: 178.21px;
+}
+
+.Image2{
+  width: 40.7px;
+  height: 37.3px;
+  position: absolute;
+  top: 74.58px;
+  left: 172.11px;
+}
+
+.Image3{
+  width: 40.7px;
+  height: 37.3px;
+  position: absolute;
+  top: 23.26px;
+  left: 160.88px;
+}
+
+.Editsvgrepocom{
+  width: 40.7px;
+  height: 40px;
+  position: absolute;
+  top: 106px;
+  left: 181.22px;
+}
+.FlexColumn{
+  height: 164px;
+  background-image: url("https://file.rendit.io/n/zHuyvfgJjw3nNbdJJrnO.svg");
+  background-size: cover;
+  position: absolute;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 27.89px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 9.76px 0px 12.24px;
+}
+
+.Text4{
+  width: 204px;
+  height: 41.9px;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 700;
+}
+.Text5{
+  width: 181px;
+  height: 56.3px;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 700;
+  align-self: flex-start;
+  margin: 0px 0px 0px 9.16px;
+}
+
+.Element4{
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 259px;
+  height: 75px;
+  position: absolute;
+  top: 191px;
+}
+ .WhiteRectangle1{
+  border-width: 1px;
+  border-color: #000000;
+  border-style: solid;
+  width: 224px;
+  height: 73px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  border-radius: 10px;
+}
+
+.Text6{
+  width: 191px;
+  height: 30px;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 700;
+  color: #151eff;
+  position: absolute;
+  top: 23px;
+  left: 67.83px;
+}
+.FlexColumn1{
+  width: 281px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 35px;
+  flex-grow: 1;
+  align-items: center;
+  padding: 2px 0px;
+  margin: 0px 41px 0px 0px;
+}
+
+
+.Text9{
+  width: 234px;
+  height: 27px;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 700;
+  position: absolute;
+  top: 58px;
+}
+
+.SilverRectangle2{
+  width: 281px;
+  height: 87px;
+  background-color: #c4c4c4;
+  position: relative;
+}
+
+ .Text10{
+  width: 175px;
+  height: 31.1px;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 700;
+  position: absolute;
+  top: 18.64px;
+  left: 45px;
+}
+
+.SilverRectangle3{
+  width: 281px;
+  height: 87px;
+  background-color: #c4c4c4;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.Text11{
+  width: 175px;
+  height: 31.1px;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 700;
+  position: absolute;
+  top: 5.19px;
+  left: 7px;
+}
+.Image5{
+  width: 59.9px;
+  height: 74.6px;
+  position: absolute;
+  top: 6.21px;
+  left: 220px;
+}
+
+
+.Text12{
+  width: 234px;
+  height: 27px;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 700;
+  position: absolute;
+  top: 54px;
+  left: 9px;
+}
+
+.FlexColumn2{
+  width: 277px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 34px;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.Text15{
+  width: 234px;
+  height: 27px;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 700;
+  position: absolute;
+  top: 59px;
+  left: 2px;
+}
+
+.Text18{
+  width: 234px;
+  height: 27px;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 700;
+  position: absolute;
+  top: 57px;
+  left: 7px;
+}
+.SilverRectangle{
+  width: 277px;
+  height: 90px;
+  background-color: #c4c4c4;
+  position: relative;
+  /* align-self: ${(props) => props.alignSelf}; */
+}
+.Text7{
+  width: 172px;
+  height: 32.1px;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 700;
+  position: absolute;
+  top: 19.29px;
+  /* left: ${(props) => props.left}; */
+}
+.SilverRectangle1{
+  width: 277px;
+  height: 90px;
+  background-color: #c4c4c4;
+  position: absolute;
+}
+ .Text8{
+  width: 172px;
+  height: 32.1px;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 700;
+  position: absolute;
+  top: 5.37px;
+  left: 7px;
+ }
+
+.Image4{
+  width: 59.1px;
+  height: 77.1px;
+  position: absolute;
+  top: 6.43px;
+  left: 217px;
+}

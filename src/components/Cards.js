@@ -20,7 +20,7 @@ function Cards() {
               src='images/student2.jpg'
               text='Register students, make announcements and more'
               label='Staff Dashboard'
-              path='/products'
+              path='/staff'
             />
             <CardItem
               src='images/school1.jpg'
@@ -40,7 +40,7 @@ function Cards() {
               src='images/student3.jpg'
               text='A list of all courses we offer'
               label='Courses'
-              path='/products'
+              path='/sessions'
             />
             <CardItem
               src='images/school4.jpg'
