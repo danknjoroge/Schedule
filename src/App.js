@@ -11,8 +11,10 @@ import Login from './components/pages/Login';
 import Session from './components/pages/Session';
 import Staff from './components/pages/Staff';
 import Profile from './components/pages/Profile';
+// import { Component } from 'react/cjs/react.production.min';
 
-function App() {
+  
+  function App() {
   return (
     <>
       <Router>

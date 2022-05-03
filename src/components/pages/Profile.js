@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class UserCards extends Component {
-  state = {
+    state = {
     data: [],
     per: 1,
     page: 1,
@@ -14,7 +14,7 @@ class UserCards extends Component {
 
   loadData = () => {
     const { per, page, data } = this.state;
-    const endpoint = ``;
+    const endpoint = `https://randomuser.me/api/?nat=us&results=${per}&page=${page}`;
     fetch(endpoint)
       .then(response => response.json())
       .then(json => {
@@ -78,7 +78,7 @@ class UserCards extends Component {
             this.loadMore();
           }}
         >
-          User Profile
+          Load More Users
         </button>
       </div>
     );
