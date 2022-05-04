@@ -56,7 +56,6 @@ const List = (props) => {
  
   return (
     <Container fluid>
-    <h2 className='list-head'>Available Announcements</h2>
       {announcements.map((announcements) => {
         return (
   <Row>
@@ -115,7 +114,7 @@ const List = (props) => {
        
         <Button variant="flat" size="sm" type="submit">Submit</Button>
 
-        <div style={{color:"#18183D"}} className="message">{message ? <p>{message}</p> : null}</div>
+        <div style={{color:"#18183D"}} className="message">{message ? <p style={{color:"#18183D"}}>{message}</p> : null}</div>
       </form>
     </div>
         </Modal.Body>
