@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import './App.css';
 import Home from './components/pages/Home';
@@ -11,10 +11,26 @@ import Login from './components/pages/Login';
 import Session from './components/pages/Session';
 import Staff from './components/pages/Staff';
 import Profile from './components/pages/Profile';
-// import { Component } from 'react/cjs/react.production.min';
+import Contacts from './components/pages/Contacts';
 
   
-  function App() {
+class App extends Component {
+
+  state = {
+    contacts: []
+  }
+
+  componentDidMount() {
+    fetch('https://class-schedule-app00.herokuapp.com/api/announcements/')
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({ contacts: data })
+      this.setState({ sessions: data })
+    })
+    .catch(console.log)
+  }
+
+  render() {
   return (
     <>
       <Router>
@@ -29,10 +45,14 @@ import Profile from './components/pages/Profile';
           <Route path='/session' component={Session} />
           <Route path='/staff' component={Staff} />
           <Route path='/profile' component={Profile} />
+          <Contacts contacts={this.state.contacts} />
+          <Session sessions={this.state.sessions} />
+
         </Switch>
       </Router>
     </>
   );
+}
 }
 
 export default App;

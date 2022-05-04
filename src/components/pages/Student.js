@@ -13,8 +13,6 @@ const Student = () => {
     <h6>Students</h6>
     <Card.Link style={{color: "white"}}href="/sessions">Sessions</Card.Link>   
 
-
-
     </Col>
     <Col sm={10}>
         <h3 style={{textAlign:'center'}}>Courses</h3>

@@ -48,6 +48,14 @@ function Cards() {
               label='All activities'
               path='/'
             />
+
+<CardItem
+              src='images/student3.jpg'
+              text='A list of all courses we offer'
+              label='Contacts'
+              path='/contacts'
+            />
+
           </ul>
         </div>
       </div>
