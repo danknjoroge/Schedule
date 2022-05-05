@@ -42,3 +42,23 @@
   color: #fff;
   font-size: 100px;
 }
+/* mercy  */
+
+input {
+  display: block;
+  width: 20rem;
+  height: 2rem;
+  padding: 0.5rem;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+button:hover {
+  background-color: #ffffff;
+}
+.message {
+  font-size: 1.2em;
+  text-align: center;
+  color: #18183D;
+}
