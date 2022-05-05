@@ -40,7 +40,8 @@ const Announcement = () => {
 <Col sm={10}><h2>| Announcements</h2>
 <div className='repo-container'>
       <ListLoading isLoading={appState.loading} announcements={appState.announcements} />
-    </div><footer>
+    </div> 
+    <footer>
       <div className='footer'>
         Built with {' '}
         <span role='img' aria-label='love'>

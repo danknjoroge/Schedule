@@ -40,7 +40,7 @@ function Cards() {
               src='images/student3.jpg'
               text='A list of all courses we offer'
               label='Courses'
-              path='/sessions'
+              path='/staff'
             />
             <CardItem
               src='images/school4.jpg'

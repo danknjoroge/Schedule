@@ -12,6 +12,7 @@ import Staff from './components/pages/Staff';
 import Profile from './components/pages/Profile';
 import Announcement from './components/pages/Announcement';
 
+
   
 class App extends Component {
 
@@ -45,6 +46,7 @@ class App extends Component {
           <Route path='/profile' component={Profile} />
           <Announcement announcements={this.state.announcements} />
           <Session sessions={this.state.sessions} />
+          <Staff staff={this.state.staff} />
 
         </Switch>
       </Router>

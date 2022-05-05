@@ -1,80 +1,67 @@
-// import React from "react";
-// import "./Staff.css";
+import './Staff.css';
+import React, { useState, useEffect }  from 'react';
+import {  Row, Col } from 'react-grid';
+import Container from 'react-bootstrap/Container';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from 'react-bootstrap/Card'  
+import List from './List';
+import withListLoading from './withListLoading';
 
+
+
+const Staff = () => {
+  const ListLoading = withListLoading(List);
+  const [appState, setAppState] = useState({
+    loading: false,
+    repos: null,
+  });
+
+  useEffect(() => {
+    setAppState({ loading: true });
+    const apiUrl = `https://class-schedule-app00.herokuapp.com/courses/`;
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((staff) => {
+        setAppState({ loading: false, staff: staff });
+      });
+  }, [setAppState]);
+    return (
+<Container fluid>
+
+<Row>   
+<Col  sm={2} style={{background: "#18183D", color:"white", overflow: 'hidden',}}>
+  <h3>All</h3>
+  <Card.Link style={{color: "white"}}href="/student">Courses</Card.Link>   
+  <h6>Students</h6>
+  <Card.Link style={{color: "white"}}href="/sessions">Sessions</Card.Link> 
+
+
+</Col>
+<Col sm={10}><h2>| Staff Dashboard</h2>
+<div className='repo-container'>
+      <ListLoading isLoading={appState.loading} staff={appState.staff} />
+    </div> 
+    <footer>
+      <div className='footer'>
+        Built with {' '}
+        <span role='img' aria-label='love'>
+          💚
+        </span>{' '}
+         by Group 10
+      </div>
+    </footer>
+ 
+  
 
   
-import React, { Component } from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+</Col>
+  
+</Row>
+</Container>
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      items: []
-    };
-  }
 
-  componentDidMount() {
-    fetch("https://class-schedule-app00.herokuapp.com/api/announcements/?format=json")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            items: result.results
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
-  }
 
-  render() {
-    const { error, isLoaded, items } = this.state;
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      return <div>Loading...</div>;
-    } else {
-      return (
-        <div>
-          <Container>
-            <h1 style={{textAlign: 'center', paddingTop: '10px'}}>Welcome To The Blog!</h1>
-            {items.map(item => (
-              <Row>
-                <Card style={{ 
-                  width: '100%',
-                  margin: '10px'
-                  }} key={item.id}>
-                  {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-                  <Card.Body>
-                    <Card.Title style={{fontSize: '40px'}}>{item.title}</Card.Title>
-                    <Card.Text>
-                      {item.date_created}
-                    </Card.Text>
-                    <Card.Text> {item.message}</Card.Text>
-                    <Button variant="primary" style={{
-                      backgroundColor: 'darkgreen', 
-                      border: 'darkgreen 1px solid'
-                      }}>Read More</Button>
-                  </Card.Body>
-                </Card>
-              </Row>
-            ))}
-          </Container>
-        </div>
-      );
-    }
-  }
-}
+    );
+};
 
-export default App;
+export default Staff;

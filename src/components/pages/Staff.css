@@ -1,4 +1,4 @@
-.BodyGroupRoot{
+/* .BodyGroupRoot{
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -294,8 +294,9 @@
   height: 90px;
   background-color: #c4c4c4;
   position: relative;
-  /* align-self: ${(props) => props.alignSelf}; */
+  align-self: ${(props) => props.alignSelf}; 
 }
+
 .Text7{
   width: 172px;
   height: 32.1px;
@@ -304,7 +305,7 @@
   font-weight: 700;
   position: absolute;
   top: 19.29px;
-  /* left: ${(props) => props.left}; */
+  left: ${(props) => props.left};
 }
 .SilverRectangle1{
   width: 277px;
@@ -329,4 +330,4 @@
   position: absolute;
   top: 6.43px;
   left: 217px;
-}
+} */
