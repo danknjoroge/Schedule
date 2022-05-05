@@ -53,7 +53,7 @@ function Cards() {
               src='images/student3.jpg'
               text='A list of all courses we offer'
               label='Contacts'
-              path='/contacts'
+              path='/announcements'
             />
 
           </ul>
