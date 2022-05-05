@@ -12,6 +12,7 @@
     "react": "^16.14.0",
     "react-bootstrap": "^2.3.1",
     "react-dom": "^16.14.0",
+    "react-google-calendar-api": "^1.5.2",
     "react-grid": "^4.0.4",
     "react-grid-system": "^8.1.4",
     "react-router-dom": "^5.2.0",

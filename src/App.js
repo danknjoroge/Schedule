@@ -6,12 +6,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Student from './components/pages/Student';
 import Products from './components/pages/Products';
 import SignUp from './components/pages/SignUp';
-import Announcement from './components/pages/Announcement';
 import Login from './components/pages/Login';
 import Session from './components/pages/Session';
 import Staff from './components/pages/Staff';
 import Profile from './components/pages/Profile';
-import Contacts from './components/pages/Contacts';
+import Announcement from './components/pages/Announcement';
 
   
 class App extends Component {
@@ -39,13 +38,12 @@ class App extends Component {
           <Route path='/' exact component={Home} />
           <Route path='/products' component={Products} />
           <Route path='/signup' component={SignUp} />
-          <Route path='/announcement' component={Announcement} />
           <Route path='/student' component={Student} />
           <Route path='/login' component={Login} />
           <Route path='/session' component={Session} />
           <Route path='/staff' component={Staff} />
           <Route path='/profile' component={Profile} />
-          <Contacts contacts={this.state.contacts} />
+          <Announcement announcements={this.state.announcements} />
           <Session sessions={this.state.sessions} />
 
         </Switch>
