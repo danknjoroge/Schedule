@@ -5,7 +5,7 @@ import Home from './components/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Student from './components/pages/Student';
 import Products from './components/pages/Products';
-import SignUp from './components/pages/SignUp';
+import StudentSignup from './components/pages/StudentSignup';
 import Login from './components/pages/Login';
 import Session from './components/pages/Session';
 import Staff from './components/pages/Staff';
@@ -38,7 +38,7 @@ class App extends Component {
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/products' component={Products} />
-          <Route path='/signup' component={SignUp} />
+          <Route path='/signup' component={StudentSignup} />
           <Route path='/student' component={Student} />
           <Route path='/login' component={Login} />
           <Route path='/session' component={Session} />

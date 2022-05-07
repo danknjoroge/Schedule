@@ -1,102 +1,71 @@
-import React from 'react'
-import { useState } from 'react';
-import './Signup.css'
-export default function Form() {
+import React, {useState}from 'react'
+import {connect} from "react-redux"
+import {login} from "../../actions/auth"
+import {Redirect} from "react-router-dom"
+import PropTypes from "prop-types"
 
-// States for registration
-const [name, setName] = useState('');
-const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
+function Login ({login, isAuthenticated, isStudent}) {
+    const [user, setUser]=useState({
+        username:"",
+        password:""
+    })
 
-// States for checking the errors
-const [submitted, setSubmitted] = useState(false);
-const [error, setError] = useState(false);
+    const {username, password}=user
 
-// Handling the name change
-const handleName = (e) => {
-setName(e.target.value);
-setSubmitted(false);
-};
-
-// Handling the email change
-const handleEmail = (e) => {
-setEmail(e.target.value);
-setSubmitted(false);
-};
-
-// Handling the password change
-const handlePassword = (e) => {
-setPassword(e.target.value);
-setSubmitted(false);
-};
-
-// Handling the form submission
-const handleSubmit = (e) => {
-e.preventDefault();
-if (name === '' || email === '' || password === '') {
-setError(true);
-} else {
-setSubmitted(true);
-setError(false);
+    const loginChange=(e)=>setUser({...user, [e.target.name]:e.target.value})
+     const handleLoginSubmit=(e)=>{
+         e.preventDefault();
+         login({username, password})
+     }
+    
+     if (isAuthenticated && isStudent){
+        return <Redirect to="/student/dashboard" />
+    }else if(isAuthenticated && !isStudent){
+        return<Redirect to="/tm/dashboard" />
+    }else{  
+  return (
+    <div>
+         <div className='container mb-5'>
+            
+            <div className='row'>
+                <div className='col-md-6 mx-auto'>
+                <h2>Sign In</h2>
+                    <form onSubmit={(e)=>handleLoginSubmit(e)}>
+                    <div className="form-group mb-3">
+                        <label>Username</label>
+                        <input type="text" 
+                        className="form-control"
+                        onChange={ e =>loginChange(e)} 
+                        placeholder="username..." 
+                        name="username"  value={username}/>
+                    </div>
+                    <div className="form-group mb-3">
+                        <label>Password</label>
+                        <input type="text" 
+                        className="form-control"
+                        onChange={ e =>loginChange(e)} 
+                        placeholder="username..." 
+                        name="password"  value={password}/>
+                    </div>
+                    <button className='btn btn-primary'>Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  )
 }
-};
-
-// Showing success message
-const successMessage = () => {
-return (
-<div
-className="success"
-style={{
-display: submitted ? '' : 'none',
-}}>
-<h3>Welcome aboard {name}!!</h3>
-</div>
-);
-};
-
-// Showing error message if error is true
-const errorMessage = () => {
-return (
-<div
-className="error"
-style={{
-display: error ? '' : 'none',
-}}>
-<p>Please enter all the fields</p>
-</div>
-);
-};
-
-return (
-<div className="form">
-<div>
-<h1>Register</h1>
-<hr />
-</div>
-
-{/* Calling to the methods */}
-<div className="messages">
-{errorMessage()}
-{successMessage()}
-</div>
-
-<form>
-{/* Labels and inputs for form data */}
-
-<label className="label">Email</label>
-<input onChange={handleEmail} className="input"
-value={email} type="email" placeholder='Enter your email ...' />
-
-<label className="label">Password</label>
-<input onChange={handlePassword} className="input"
-value={password} type="password" placeholder='Enter Password' />
-
-<button onClick={handleSubmit} className="reg-btn" type="submit">
-Submit
-</button>
-</form>
-<hr /><br />
- <p className='login-text>'>Don't have an account? &nbsp; <span>Sign Up</span></p>
-</div>
-);
 }
+
+Login.propTypes={
+    login:PropTypes.func.isRequired,
+    isAuthenticated:PropTypes.bool,
+    isStudent:PropTypes.bool
+}
+
+const mapStateToProps =state =>({
+    isAuthenticated:state.auth.isAuthenticated,
+    isStudent:state.auth.isStudent
+})
+
+export default connect(mapStateToProps, {login})(Login)

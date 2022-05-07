@@ -49,13 +49,6 @@ function Cards() {
               path='/'
             />
 
-<CardItem
-              src='images/student3.jpg'
-              text='A list of all courses we offer'
-              label='Contacts'
-              path='/announcements'
-            />
-
           </ul>
         </div>
       </div>
