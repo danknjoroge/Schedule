@@ -30,7 +30,7 @@ const StudentSignup = ({create_studentuser, isAuthenticated,isStudent}) => {
     create_studentuser(newStudent)
    }
     if(isAuthenticated && isStudent){
-        return <Redirect to="/student/dashboard"/>
+        return <Redirect to="/student"/>
     }
     return (
         <div className='container'>
