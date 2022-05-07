@@ -19,9 +19,9 @@ function Login ({login, isAuthenticated, isStudent}) {
      }
     
      if (isAuthenticated && isStudent){
-        return <Redirect to="/student/dashboard" />
+        return <Redirect to="/student" />
     }else if(isAuthenticated && !isStudent){
-        return<Redirect to="/tm/dashboard" />
+        return<Redirect to="/staff" />
     }else{  
   return (
     <div>
