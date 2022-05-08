@@ -10,6 +10,7 @@ import Session from './components/pages/Session';
 import Staff from './components/pages/Staff';
 import Profile from './components/pages/Profile';
 import Announcement from './components/pages/Announcement';
+// import {GoogleLogin} from 'react-google-login';
 
   
 class App extends Component {
@@ -44,6 +45,15 @@ class App extends Component {
           <Announcement announcements={this.state.announcements} />
           <Session sessions={this.state.sessions} />
           <Staff staff={this.state.staff} />
+          {/* <GoogleLogin clientId='391959673513-4tum0hug3v96ggrm2p754lrpnh1hc589.apps.googleusercontent.com' 
+          buttonText = 'Authoriza calendar'
+          onSuccess = {responseGgle}
+          onFailure = {responseError}
+          cookiePolicy = {'single_host_origin'}
+          responseType = 'code'
+          accessType = 'offline'
+          scope = 'openid email profile https://www.googleapis.com/auth/calendar'
+          /> */}
 
         </Switch>
       </Router>
