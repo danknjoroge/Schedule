@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
+import {useSelector} from 'react-redux';
 import './Navbar.css';
 
 function Navbar() {
+  const auth= useSelector((state) => state.auth)
+  console.log(auth);
+
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -28,6 +32,7 @@ function Navbar() {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
+
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           <i class="fa fa-home"></i> &nbsp;
             Class Shedule
@@ -36,6 +41,7 @@ function Navbar() {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          {auth.isAuthenticated ?<>
             <li className='nav-item'>
               <Link to='/announcements' className='nav-links' onClick={closeMobileMenu}>
                 Notifications
@@ -56,10 +62,8 @@ function Navbar() {
                 Profile
               </Link>
             </li>
-
-          
-
-            <li className='nav-item'>
+           </>: <>
+           <li className='nav-item'>
               <Link
                 to='/login'
                 className='nav-links'
@@ -78,8 +82,13 @@ function Navbar() {
                 Sign Up
               </Link>
             </li>
+           </>}
           </ul>
-          {button && <Button className='signup' buttonStyle='btn--outline'>SIGN UP</Button>}
+          { auth.isAuthenticated ? <>
+            {button && <Button className='signup' buttonStyle='btn--outline'>Logout</Button>}
+          </> :  <>
+            {button && <Button className='signup' buttonStyle='btn--outline'>SIGN UP</Button>}
+          </>}
         
         </div>
       </nav>
