@@ -1,6 +1,6 @@
 import axios from "axios";
 import { 
-     LOGIN_SUCCESS, LOGIN_FAILED, REGISTER_CUSER_SUCCESS, REGISTER_CUSER_FAILED
+     LOGIN_SUCCESS, LOGIN_FAILED, REGISTER_CUSER_SUCCESS, REGISTER_CUSER_FAILED, LOGOUT_SUCCESS
 } from "../actions/type"
 
 
@@ -52,4 +52,23 @@ export const login=({username, password})=>(dispatch)=>{
     })
 
 }
+export const logout=()=>(dispatch, getState)=>{
+    const token=getState().auth.token
+    const config={
+        headers:{
+            'Content-Type':'application/json'
+        }
+    }
 
+    if(token){
+        config.headers['Authorization']= `Token ${token}`
+    }
+    axios.post('https://neapi.herokuapp.com/api/logout/', null, config)
+    .then(res =>{
+        dispatch({
+            type:LOGOUT_SUCCESS
+        })
+    }).catch(err =>{
+        console.log(err.response.data)
+    })
+}

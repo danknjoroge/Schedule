@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {logout} from "../actions/auth"
 import './Navbar.css';
 
 function Navbar() {
   const auth= useSelector((state) => state.auth)
+  const dispatch=useDispatch()
   console.log(auth);
 
   const [click, setClick] = useState(false);
@@ -85,7 +87,14 @@ function Navbar() {
            </>}
           </ul>
           { auth.isAuthenticated ? <>
-            {button && <Button className='signup' buttonStyle='btn--outline'>Logout</Button>}
+            {/* <Link to='/'>
+            <Button onClick={()=>dispatch(logout())} className='signup' buttonStyle='btn--outline'>Logout</Button>
+            </Link> */}
+             <Link to="/">
+            <button onClick={()=>dispatch(logout())} type="button" className="logout" buttonStyle='btn--outline'>
+            Logout
+            </button>
+          </Link>
           </> :  <>
             {button && <Button className='signup' buttonStyle='btn--outline'>SIGN UP</Button>}
           </>}
