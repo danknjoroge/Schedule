@@ -45,7 +45,8 @@
   margin-right: 2rem;
 }
 
-.signup {
+
+.signup,.logout{
   border-radius: 30px;
   padding: 5px 20px 5px 20px ;
   font-size: 18px;
@@ -57,7 +58,7 @@
 
 }
 
-.signup:hover {
+.signup:hover, .logout:hover {
   border-radius: 30px;
   padding: 8px;
   font-size: 20px;
