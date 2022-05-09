@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Modal } from 'react-bootstrap';
+import './Comments.css';
 import {  Row, Col } from 'react-grid';
-import './list.css';
-
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'  
@@ -55,25 +54,18 @@ const [isOpen, setIsOpen] = React.useState(false);
   return <p>No Announcements, sorry</p>;
 
   return ( 
-    <Container fluid>
-    <h2 className='list-head'>Available Announcements</h2>
-      {announcements.map((announcements) => {
+    <Container fluid >
+      <Row >
+      <Col className="item-container">
+      {announcements.map((item,a,b,c,d,e) => {
         return (
-         
-  <Row>
-   <Col>
-    <Card   style={{ width: '13rem',borderRadius: '15px', backgroundColor: "#E1E4F2"}} key={announcements.id} className='list'>
+    <Card key={item.id}  style={{ width: '15rem',borderRadius: '15px', backgroundColor: "#E1E4F2"}}   className='card'>
     <Card.Body className="test">
-    <Card.Title  className='repo-text'>{announcements.title}</Card.Title>
-    <Card.Text className='title'>{announcements.message}
-    </Card.Text>        
-    <Card.Subtitle className="mb-2 text-muted">Posted by: {announcements.user}</Card.Subtitle>
-    <Card.Subtitle className="mb-2 text-muted">Posted On: {announcements.date_created}</Card.Subtitle>
-    <Card.Subtitle className="mb-2 text-muted">Updated On: {announcements.date_updated}</Card.Subtitle>
-   
-
-   
-    
+    <Card.Title  className='repo-text'key={a}>{item.title}</Card.Title>
+    <Card.Text className='repo-description' style={{color:'#18183D'}} key={b}>{item.message}</Card.Text>        
+    <Card.Subtitle className="mb-2 text-muted"key={c}>Posted by: {item.user.username}</Card.Subtitle>
+    <Card.Subtitle className="mb-2 text-muted"key={d}>Posted On: {item.date_created}</Card.Subtitle>
+    <Card.Subtitle className="mb-2 text-muted"key={e}>Updated On: {item.date_updated}</Card.Subtitle> 
   <style type="text/css">
     {`
     .btn-flat {
@@ -83,21 +75,15 @@ const [isOpen, setIsOpen] = React.useState(false);
 
     .btn-sm {
       padding: 0.1rem 0.5rem;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }
     `}
   </style>
-
- 
   <>
-    <Button onClick={showModal} variant="flat" size="sm">
-    Comment
-    </Button>
+    <Button onClick={showModal} variant="flat" size="sm">Comment</Button>
       <Modal show={isOpen} onHide={hideModal}>
         <Modal.Header>
-          <Modal.Title>
-            <h1 className='title'>Leave your comment </h1>
-          </Modal.Title>
+          <Modal.Title><h1 style={{color:'#18183D'}}>Leave your comment </h1></Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <div>
@@ -111,16 +97,15 @@ const [isOpen, setIsOpen] = React.useState(false);
         </Modal.Body>
         <Modal.Footer>
         <Button variant="flat" size="sm" onClick={hideModal}>Close</Button>
-
         </Modal.Footer>
       </Modal>
     </>
 </Card.Body>
     </Card>
-    </Col>
-    </Row>
         );
       })}
+       </Col>
+      </Row>
           </Container>
   );
 };

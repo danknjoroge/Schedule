@@ -8,7 +8,6 @@ import List from './List';
 import withListLoading from './withListLoading';
 
 
-
 const Announcement = () => {
   const ListLoading = withListLoading(List);
   const [appState, setAppState] = useState({
@@ -28,13 +27,14 @@ const Announcement = () => {
     return (
 <Container fluid>
 
+
 <Row>   
 <Col  sm={2} style={{background: "#18183D", color:"white", overflow: 'hidden',}}>
   <h3>All</h3>
   <Card.Link style={{color: "white"}}href="/student">Courses</Card.Link>   
   <h6>Students</h6>
   <Card.Link style={{color: "white"}}href="/sessions">Sessions</Card.Link> 
-
+<h6><a style={{color: "white",textDecoration:"none"}}href="/comments">Comments</a></h6>
 
 </Col>
 <Col sm={10}><h2>| Announcements</h2>
