@@ -1,8 +1,8 @@
  const router = require('express').Router();
  const { google } = require('googleapis')
 
-  const GOOGLE_CLIENT_ID = '708105023641-t350k3usoo751tfnilu9hrdokjmmli8v.apps.googleusercontent.com'
-  const GOOGLE_CLIENT_SECRET = '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'
+  const GOOGLE_CLIENT_ID = '738570453590-61ephf8cc7oqu22p5rn57uk5gdikpudj.apps.googleusercontent.com'
+  const GOOGLE_CLIENT_SECRET = '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'
 
  const oauth2Client = new google.auth.OAuth2(
    GOOGLE_CLIENT_ID,
@@ -17,8 +17,7 @@ router.get('/', async (req, res, next) => {
 router.post('/create-tokens', async (req, res, next) => {
   try {
     // NEXT LINE TOKEN FROM CONSOLE
-    const REFRESH_TOKEN =
-    ''
+    const REFRESH_TOKEN = ''
     const { code } = req.body
     const { tokens } = await oauth2Client.getToken(code)
     res.send(tokens) // DO NOT SEND BACK THE TOKEN IN THE APP

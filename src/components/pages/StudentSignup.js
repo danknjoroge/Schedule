@@ -59,7 +59,7 @@ const StudentSignup = ({create_studentuser, isAuthenticated,isStudent}) => {
                         </div>
                         <div className='form-group mb-3'>
                             <label>password</label>
-                            <input type='text'
+                            <input type='password'
                                  className='form-control' 
                                  name='password'
                                  value={password}
