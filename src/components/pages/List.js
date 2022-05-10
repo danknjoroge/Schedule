@@ -4,7 +4,8 @@ import './Comments.css';
 import {  Row, Col } from 'react-grid';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card'  
+import Card from 'react-bootstrap/Card';
+import moment from 'moment';
 
 const List = (props) => {
   const [comment, setComment]= useState("");
@@ -59,14 +60,18 @@ const [isOpen, setIsOpen] = React.useState(false);
       <Col className="item-container">
       {announcements.map((item,a,b,c,d,e) => {
         return (
-    <Card key={item.id}  style={{ width: '15rem',borderRadius: '15px', backgroundColor: "#E1E4F2"}}   className='card'>
+
+
+
+    <Card key={item.id}  style={{ width: '15rem',borderRadius: '15px', backgroundColor: "#fff", border:"none", outline:"none"}}   className='card'>
     <Card.Body className="test">
     <Card.Title  className='repo-text'key={a}>{item.title}</Card.Title>
     <Card.Text className='repo-description' style={{color:'#18183D'}} key={b}>{item.message}</Card.Text>        
-    <Card.Subtitle className="mb-2 text-muted"key={c}>Posted by: {item.user.username}</Card.Subtitle>
-    <Card.Subtitle className="mb-2 text-muted"key={d}>Posted On: {item.date_created}</Card.Subtitle>
-    <Card.Subtitle className="mb-2 text-muted"key={e}>Updated On: {item.date_updated}</Card.Subtitle> 
+    <Card.Subtitle className="mb-2 text-muted"key={c}>Posted by: {item.user}</Card.Subtitle>
+    <Card.Subtitle className="mb-2 text-muted"key={d}>Posted On: {moment(item.date_created).utc().format('YYYY-MM-DD')}</Card.Subtitle>
+
   <style type="text/css">
+
     {`
     .btn-flat {
       background-color: #18183D;

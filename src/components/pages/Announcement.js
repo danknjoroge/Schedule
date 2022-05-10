@@ -31,9 +31,9 @@ const Announcement = () => {
 <Row>   
 <Col  sm={2} style={{background: "#18183D", color:"white", overflow: 'hidden',}}>
   <h3>All</h3>
-  <Card.Link style={{color: "white"}}href="/student">Courses</Card.Link>   
+  <Card.Link style={{color: "white", textDecoration: "none"}}href="/student">Courses</Card.Link>   
   <h6>Students</h6>
-  <Card.Link style={{color: "white"}}href="/sessions">Sessions</Card.Link> 
+  <Card.Link style={{color: "white", textDecoration: "none"}}href="/sessions">Sessions</Card.Link> 
 <h6><a style={{color: "white",textDecoration:"none"}}href="/comments">Comments</a></h6>
 
 </Col>

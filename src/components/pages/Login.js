@@ -41,7 +41,7 @@ function Login ({login, isAuthenticated, isStudent}) {
                     </div>
                     <div className="form-group mb-3">
                         <label>Password</label>
-                        <input type="text" 
+                        <input type="password" 
                         className="form-control"
                         onChange={ e =>loginChange(e)} 
                         placeholder="username..." 
