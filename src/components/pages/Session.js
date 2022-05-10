@@ -55,8 +55,7 @@ function Session() {
           <h1>Add Sessions and Events</h1>
           </div>
 
-              {
-                !signedIn ? (
+     
                   <div>
                   <GoogleLogin 
                       clientId="708105023641-t350k3usoo751tfnilu9hrdokjmmli8v.apps.googleusercontent.com"
@@ -70,11 +69,11 @@ function Session() {
                       scope="openid email profile https://www.googleapis.com/auth/calendar"
                       />
           </div>
-                ) : (
+               
 
-      <div>
+      <div className='form'>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='summary'>summary</label>
+        <label htmlFor='summary'>Title</label>
         <br />
         <input type='text' id='summary' value={summary} onChange={e => setSummary(e.target.value) } />
       <br />
@@ -84,27 +83,25 @@ function Session() {
         <textarea id='description' value={description} onChange={e => setDescription (e.target.value)} />
       <br />
 
-      <label htmlFor='location'>location</label>
+      {/* <label htmlFor='location'>location</label>
         <br />
         <input type='text' id='locaion' value={location} onChange={e => setLocation (e.target.value)} />
-      <br />
+      <br /> */}
 
       <label htmlFor='startDateTime'>Starting at</label>
         <br />
-        <input type='text' id='startdate' value={startDateTime} onChange={e => setStartDateTime} />
+        <input type='datetime-local' id='startdate' value={startDateTime} onChange={e => setStartDateTime} />
       <br />
 
       <label htmlFor='endDateTime'>End date</label>
         <br />
         <input type='datetime-local' id='enddate' value={endDatetime} onChange={e => setEndDateTime} />
       <br />
-      <button type='submit'>Create event</button>
+      <button className='button-event' type='submit'>Create event</button>
       </form>
     </div>
 
   
-)
-}
 </div>
 )
 

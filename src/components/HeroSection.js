@@ -10,7 +10,7 @@ function HeroSection() {
       <h1>Our next classes start in June</h1>
       <div className='hero-buttons'>
         <Button
-          className='button'
+          className='button-join'
           buttonStyle='btn--outline'
           buttonSize='btn--large'
         >
