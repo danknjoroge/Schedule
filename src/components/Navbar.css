@@ -18,15 +18,54 @@
   max-width: 1500px;
 }
 
+li .btn-login{
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+li .btn-login:hover{
+  color: #fff;
+  transition: all .5s ease-in-out;
+  font-size: 1.6rem;
+  color: rgb(236, 222, 222);
+}
+
+li .nav-links:hover{
+  color: #fff;
+  transition: all .5s ease-in-out;
+  font-size: 1.2rem;
+  color: rgb(236, 222, 222);
+}
+
+li .nav-links{
+  color: #fff;
+  transition: all .5s ease-in-out;
+  font-size: 1.3rem;
+  color: rgb(236, 222, 222);
+}
+
+
 .navbar-logo {
   color: #fff;
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
+}
+
+.navbar-logo:hover{
+  color: #fff;
+  transition: all .5s ease-in-out;
+  font-size: 1.6rem;
+  text-decoration: underline;
+  color: rgb(236, 222, 222);
+}
+
+div .fa-home{
+  font-size: 2rem;
 }
 
 .fa-typo3 {
@@ -47,15 +86,20 @@
 
 
 .signup,.logout{
-  border-radius: 30px;
   padding: 5px 20px 5px 20px ;
   font-size: 18px;
   font-weight: 700;
-  background-color: #fff;
-  color: #181818;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
   outline: none;
-  border: none;
+  border: 2px solid #fff;
 
+}
+
+.btn--outline{
+  border: 2px solid #fff;
+  background-color: transparent;
 }
 
 .signup:hover, .logout:hover {
@@ -63,8 +107,7 @@
   padding: 8px;
   font-size: 20px;
   font-weight: 700;
-  background-color: #191919;
-  color: #fff;
+  color: #000;
   outline: none;
   border: none;
   transition: 0.3s ease-in-out;

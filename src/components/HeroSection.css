@@ -4,6 +4,9 @@ video {
   height: 100%;
   position: fixed;
   z-index: -1;
+  -webkit-filter: bluescale(50%); 
+  filter: grayscale(50%);
+  opacity: .9;
 }
 
 .hero-container {
@@ -34,10 +37,21 @@ video {
 
 .hero-buttons {
   margin-top: 32px;
-  border-radius: 30px;
   background-color: transparent;
   border: 1px solid #fff;
   margin-top: 150px;
+}
+
+
+.hero-buttons:hover {
+  margin-top: 32px;
+  background-color: transparent;
+  border: none;
+  margin-top: 150px;
+}
+
+.button-join{
+  border: none;
 }
 
 

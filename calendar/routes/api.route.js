@@ -20,7 +20,7 @@ router.post('/create-tokens', async (req, res, next) => {
     const REFRESH_TOKEN = ''
     const { code } = req.body
     const { tokens } = await oauth2Client.getToken(code)
-    res.send(tokens) // DO NOT SEND BACK THE TOKEN IN THE APP
+    res.send(tokens) // A REMINDER TO REMOVE THE TOKEN
 
   } catch (error) {
     next(error)
