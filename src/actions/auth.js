@@ -39,7 +39,7 @@ export const login=({username, password})=>(dispatch)=>{
     }
     const body=JSON.stringify({username, password})
 
-    axios.post('https://neapi.herokuapp.com/api/login/', body, config)
+    axios.post('http://127.0.0.1:8000/api/login/', body, config)
     .then(response =>{
         dispatch({
             type:LOGIN_SUCCESS,
@@ -63,7 +63,7 @@ export const logout=()=>(dispatch, getState)=>{
     if(token){
         config.headers['Authorization']= `Token ${token}`
     }
-    axios.post('https://neapi.herokuapp.com/api/logout/', null, config)
+    axios.post('https://127.0.0.1:8000/api/logout/', null, config)
     .then(res =>{
         dispatch({
             type:LOGOUT_SUCCESS

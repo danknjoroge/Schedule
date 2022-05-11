@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import {useSelector, useDispatch} from 'react-redux';
 import { Button, Form } from "react-bootstrap";
 import API from "./API";
 
@@ -12,6 +12,10 @@ const AddSchedule = () => {
   const [time, setTime] = useState("");
   const [sheduleId, setSheduleId] = useState(null);
   const [shedules, setShedules] = useState([]);
+
+  const auth= useSelector((state) => state.auth)
+  const dispatch=useDispatch()
+  console.log(auth);
 
   useEffect(() => {
     refreshShedules();
@@ -24,8 +28,12 @@ const AddSchedule = () => {
       })
       .catch(console.error);
   };
+  // const onSub=(e)=>{
+  //   e.target.reset();
+  // }
   const onSubmit = (e) => {
     e.preventDefault();
+    // e.target.reset();
     let item = { day, details, time };
     API.post("/", item).then(() => refreshShedules());
   };
@@ -124,20 +132,13 @@ const AddSchedule = () => {
                     <td> {shedule.day}</td>
                     <td>{shedule.details}</td>
                     <td>{shedule.time}</td>
+                    {auth.isTm ? <>
+                    
+                    </>:<></>}
                     <td>
-                        <button onClick={() => selectShedule(shedule.id)}>Edit</button>
-                        <button onClick={() => onDelete(shedule.id)}>Delete</button>
-                        
-                      <i
-                        className="fa fa-pencil-square text-primary d-inline"
-                        aria-hidden="true"
-                        onClick={() => selectShedule(shedule.id)}
-                      ></i>
-                      <i
-                        className="fa fa-trash-o text-danger d-inline mx-3"
-                        aria-hidden="true"
-                        onClick={() => onDelete(shedule.id)}
-                      ></i>
+                       
+                    <button onClick={() => selectShedule(shedule.id)}>Edit</button>
+                      <button onClick={() => onDelete(shedule.id)}>Delete</button>
                     </td>
                   </tr>
                 );
