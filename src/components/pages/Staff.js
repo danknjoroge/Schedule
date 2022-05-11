@@ -164,45 +164,6 @@ export default function App() {
           </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small" style={{border: "1px solid #fff", color: "#f9f9f9"}}href="/newstudent">Post Announcements</Button>
-    
-        </CardActions>
-      </Card>
-      </div>
-
-      <div class="col-md-4">
-      <Card
-        style={{
-          width: 400,
-          backgroundColor: "#2f8e92",
-          marginTop: "7%",
-          marginLeft: "10px",
-        }}
-      >
-        <CardContent>
-          <Typography
-            style={{ fontSize: 14 }}
-            color="textSecondary"
-            gutterBottom
-          >
-            Greetings of the day
-          </Typography>
-          <Typography variant="h5" component="h2">
-            How are you ?
-          </Typography>
-          <Typography
-            style={{
-              marginBottom: 12,
-            }}
-            color="textSecondary"
-          >
-            Keep Motivated
-          </Typography>
-          <Typography variant="body2" component="p">
-            Stay Happy
-          </Typography>
-        </CardContent>
-        <CardActions>
         <Button size="small" style={{border: "1px solid #fff", color: "#f9f9f9"}}href="/announcements">Comment on posts</Button>
     
         </CardActions>
