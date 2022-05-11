@@ -20,7 +20,7 @@ function Footer() {
               type='email'
               placeholder='Enter Your Email Here...'
             />
-            <Button buttonStyle='btn--outline'>Subscribe</Button>
+            <Button buttonStyle='btn--outline' style={{display: "inline"}}>Subscribe</Button>
           </form>
         </div>
       </section>
@@ -28,7 +28,7 @@ function Footer() {
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
             <h2>About Us</h2>
-            <Link to='/sign-up'>We are educators. We put everything we can in you to give the world your best</Link>
+            <Link to='/sign-up'> We put everything we can in so you can give the best of you</Link>
             <Link to='/'>Terms of Service</Link>
           </div>
           <div class='footer-link-items'>

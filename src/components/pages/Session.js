@@ -8,7 +8,7 @@ import { useState } from 'react'
 function Session() {
 
   const responseGoogle = response => {
-    console.log(response)
+    console.log(response)               
     const { code } = response
     axios.post('/api/create-tokens', { code })
       .then(response => {
