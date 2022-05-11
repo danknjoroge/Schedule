@@ -46,7 +46,7 @@ function Navbar() {
           {auth.isAuthenticated ?<>
             <li className='nav-item'>
               <Link to='/announcements' className='nav-links' onClick={closeMobileMenu}>
-                Notifications
+                Annuncements
               </Link>
             </li>
             <li className='nav-item'>

@@ -1,67 +1,181 @@
-import './Staff.css';
-import React, { useState, useEffect }  from 'react';
-import {  Row, Col } from 'react-grid';
-import Container from 'react-bootstrap/Container';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card'  
-import List from './List';
-import withListLoading from './withListLoading';
-
-
-
-const Staff = () => {
-  const ListLoading = withListLoading(List);
-  const [appState, setAppState] = useState({
-    loading: false,
-    repos: null,
-  });
-
-  useEffect(() => {
-    setAppState({ loading: true });
-    const apiUrl = `https://class-schedule-app00.herokuapp.com/courses/`;
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((staff) => {
-        setAppState({ loading: false, staff: staff });
-      });
-  }, [setAppState]);
-    return (
-<Container fluid>
-
-<Row>   
-<Col  sm={2} style={{background: "#18183D", color:"white", overflow: 'hidden',}}>
-  <h3>All</h3>
-  <Card.Link style={{color: "white"}}href="/student">Courses</Card.Link>   
-  <h6>Students</h6>
-  <Card.Link style={{color: "white"}}href="/sessions">Sessions</Card.Link> 
-
-
-</Col>
-<Col sm={10}><h2>| Staff Dashboard</h2>
-<div className='repo-container'>
-      <ListLoading isLoading={appState.loading} staff={appState.staff} />
-    </div> 
-    <footer>
-      <div className='footer'>
-        Built with {' '}
-        <span role='img' aria-label='love'>
-          💚
-        </span>{' '}
-         by Group 10
+import React from "react";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import CardActions from "@material-ui/core/CardActions";
+import { Container } from "react-grid";
+  
+export default function App() {
+  return (
+    <div style={{backgroundColor: "#f9f9f9", display: "flex"}}>
+      <Container>
+        <row>
+         
+          <div class="col-md-4"  style={{display: 'flex', flexDirection: 'column', marginTop: "5rem"}}>
+      <Card
+        style={{
+          width: 400,
+          backgroundColor: "#455073",
+          marginTop: "7%",
+          marginLeft: "10px",
+          flez: 1,
+        }}
+      >
+        <CardContent>
+          <Typography
+            style={{ fontSize: 14 }}
+            color="textSecondary"
+            gutterBottom
+          >
+            Google Calendar
+          </Typography>
+          <Typography variant="h5" component="h2">
+            How are you ?
+          </Typography>
+          <Typography
+            style={{
+              marginBottom: 12,
+            }}
+            color="textSecondary"
+          >
+            Keep Motivated
+          </Typography>
+          <Typography variant="body2" component="p">
+            Stay Happy
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small" style={{border: "1px solid #fff", color: "#f9f9f9"}}href="/session">Add Events</Button>
+        </CardActions>
+      </Card>
       </div>
-    </footer>
- 
-  
+      
 
-  
-</Col>
-  
-</Row>
-</Container>
+      <div class="col-md-4">
+      <Card
+        style={{
+          width: 400,
+          backgroundColor: "#2f8e92",
+          marginTop: "7%",
+          marginLeft: "10px",
+        }}
+      >
+        <CardContent>
+          <Typography
+            style={{ fontSize: 14 }}
+            color="textSecondary"
+            gutterBottom
+          >
+            Greetings of the day
+          </Typography>
+          <Typography variant="h5" component="h2">
+            How are you ?
+          </Typography>
+          <Typography
+            style={{
+              marginBottom: 12,
+            }}
+            color="textSecondary"
+          >
+            Keep Motivated
+          </Typography>
+          <Typography variant="body2" component="p">
+            Stay Happy
+          </Typography>
+        </CardContent>
+        <CardActions>
+        <Button size="small" style={{border: "1px solid #fff", color: "#f9f9f9"}}href="/comments">View Comments</Button>
+    
+        </CardActions>
+      </Card>
+      </div>
+
+
+      <div class="col-md-4">
+      <Card
+        style={{
+          width: 400,
+          backgroundColor: "#2f8e92",
+          marginTop: "7%",
+          marginLeft: "10px",
+        }}
+      >
+        <CardContent>
+          <Typography
+            style={{ fontSize: 14 }}
+            color="textSecondary"
+            gutterBottom
+          >
+            Greetings of the day
+          </Typography>
+          <Typography variant="h5" component="h2">
+            How are you ?
+          </Typography>
+          <Typography
+            style={{
+              marginBottom: 12,
+            }}
+            color="textSecondary"
+          >
+            Keep Motivated
+          </Typography>
+          <Typography variant="body2" component="p">
+            Stay Happy
+          </Typography>
+        </CardContent>
+        <CardActions>
+        <Button size="small" style={{border: "1px solid #fff", color: "#f9f9f9"}}href="/newstudent">Add New Student</Button>
+    
+        </CardActions>
+      </Card>
+      </div>
+
+      <div class="col-md-4">
+      <Card
+        style={{
+          width: 400,
+          backgroundColor: "#2f8e92",
+          marginTop: "7%",
+          marginLeft: "10px",
+        }}
+      >
+        <CardContent>
+          <Typography
+            style={{ fontSize: 14 }}
+            color="textSecondary"
+            gutterBottom
+          >
+            Greetings of the day
+          </Typography>
+          <Typography variant="h5" component="h2">
+            How are you ?
+          </Typography>
+          <Typography
+            style={{
+              marginBottom: 12,
+            }}
+            color="textSecondary"
+          >
+            Keep Motivated
+          </Typography>
+          <Typography variant="body2" component="p">
+            Stay Happy
+          </Typography>
+        </CardContent>
+        <CardActions>
+        <Button size="small" style={{border: "1px solid #fff", color: "#f9f9f9"}}href="/announcements">Comment on posts</Button>
+    
+        </CardActions>
+      </Card>
+      </div>
 
 
 
-    );
-};
+      </row>
+      </Container>
 
-export default Staff;
+
+    </div>
+  );
+}
