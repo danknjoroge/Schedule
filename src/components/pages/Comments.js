@@ -24,11 +24,11 @@ export default function UsersData() {
 
   return (
     <Container fluid>
-    <Row>
+    <Row style={{marginTop: "6rem"}}>
       <Col className="item-container">
       {comments.map((item,i,j,k,l) => {
         return (
-          <Card style={{ width: '15rem',borderRadius: '15px', backgroundColor: "#E1E4F2"}}  className='card' key={item.id}>
+          <Card style={{ width: '15rem',borderRadius: '15px', backgroundColor: "#fff", border: "none", outline: "none"}}  className='card' key={item.id}>
           <Card.Body className="test">
           <Card.Title  className='repo-text' style={{color:"black"}} key={i}>{item.comment}</Card.Title>
           <Card.Text className='repo-description'key={j} style={{color:'#18183D'}}>{item.announcement}</Card.Text>        

@@ -1,45 +1,44 @@
-// class ShowProfile extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       name:'',
-//       email:'',
-//       password:'',
-//       id:''
-//     };
-     
-//   }
-//   componentDidMount(){
-//     document.getElementById('addHyperLink').className = "";
-//     document.getElementById('homeHyperlink').className = "";
-//     document.getElementById('profileHyperlink').className = "active";
-//     this.getProfile();
-//   }
-//   updateProfile(){
-     
-//   }
+import React, { Component } from 'react'
+import './Announcement.css';
+import {  Row, Col } from 'react-grid';
+import Container from 'react-bootstrap/Container';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import UserProfile from 'react-user-profile';
+import $ from 'jquery';
 
-//   getProfile(){
+ 
+class Profile extends Component {
+  render() {
+    const photo = 'https://cdn.wallpapersafari.com/45/7/7ed5AD.jpg'
+    const userName = 'Joan Adhiambo'
+    const location = 'Nairobi,Kenya'
+ 
+    const comments = [
+      {
+        id: '1',
+        photo: 'https://cdn.wallpapersafari.com/45/7/7ed5AD.jpg',
+        userName: 'Lenny Rono',
+        content: 'This is awesome',
+        createdAt: 22052022,
+      }
+    ]
+ 
+    return (
+      <Container fluid>
+        <Row>
+      <Col>
+      <div style={{ marginTop: '100px', width: '100%' }}>
+            
 
-//   }
-   
-//   render() {
-//     return (
-//       <div className="col-md-5">
-//         <div className="form-area">  
-//             <form role="form">
-//               <br styles="clear:both" />
-//               <div className="form-group">
-//                 <input value={this.state.name} type="text" onChange={this.handleNameChange} className="form-control" placeholder="Name" required />
-//               </div>
-//               <div className="form-group">
-//                 <input value={this.state.password} type="password" onChange={this.handlePasswordChange} className="form-control" placeholder="Password" required />
-//               </div>
-              
-//               <button type="button" onClick={this.updateProfile} id="submit" name="submit" className="btn btn-primary pull-right">Update</button>
-//             </form>
-//         </div>
-//       </div>
-//     )
-//   }
-// }
+            <UserProfile style={{ color:'#18183D'}}photo={photo} userName={userName} location={location} initialLikesCount={5} initialFollowingCount={7} initialFollowersCount={4} initialComments={comments} />
+          </div>
+      </Col>
+        </Row>
+      </Container>
+      
+     
+    )
+  }
+}
+ 
+export default Profile;

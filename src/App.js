@@ -14,6 +14,7 @@ import Announcement from './components/pages/Announcement';
 import Comments from './components/pages/Comments';
 import Schedule from './components/pages/Schedule';
 // import AddSchedule from './components/pages/AddSchedule';
+import Newstudent from './components/pages/Newstudent';
 
 
   
@@ -47,11 +48,12 @@ class App extends Component {
           <Route path='/staff' component={Staff} />
           <Route path='/schedule' component={Schedule} />
           <Route path='/profile' component={Profile} />
+          <Route path='/comments' component={Comments} />
+          <Route path='/newstudent' component={Newstudent} />
           <Announcement announcements={this.state.announcements} />
           <Session sessions={this.state.sessions} />
           <Staff staff={this.state.staff} />
           <Comments comments={this.state.comments} />
-          <Route path='/comments' component={Comments} />
           {/* <GoogleLogin clientId='391959673513-4tum0hug3v96ggrm2p754lrpnh1hc589.apps.googleusercontent.com' 
           buttonText = 'Authoriza calendar'
           onSuccess = {responseGgle}
