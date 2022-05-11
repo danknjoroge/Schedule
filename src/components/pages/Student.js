@@ -9,14 +9,15 @@ const Student = () => {
 <Container fluid  style={{ height: "700px" }}>
   <Row style={{ height: "100%", marginLeft:"-2rem" }}>
     <Col sm={2} style={{background: "#18183D", color:"white", overflow: 'hidden', position:"fixed", marginTop: "4.5rem", height: "100%" }} >
+    <hr />
     <h3 style={{marginLeft: "30%", paddingTop: "10%"}}>All</h3> 
- 
-    <h6 style={{marginLeft: "20%", paddingTop: "10%"}}>Students</h6>
-    <Card.Link style={{color: "white", textDecoration: "none", marginLeft: "20%"}}href="/sessions">Sessions</Card.Link>   
-
+ <hr />
+    <a style={{marginLeft: "20%", paddingTop: "10%", textDecoration: "none", color: "#FFF", fontSize: "20px"}}href="/comments">Comments</a> <hr />
+    <Card.Link style={{color: "white", opacity: "0.8", fontSize: "20px", textDecoration: "none", marginLeft: "13%"}}href="/sessions">Announcements</Card.Link>   
+<hr />
     </Col>
     <Col sm={10} style={{marginLeft: "17%", marginTop: "5%"}}>
-        <h3 style={{textAlign:'center', marginTop: "2%"}}>Announcement</h3>
+        <h3 style={{textAlign:'center', marginTop: "2%", color: "white", opacity: "0.8", textAlign: "left"}}>| Courses</h3><br />
         <h4  style={{background: "#18183D", borderRadius: '15px',color:"white",textAlign:'center', overflow: 'hidden',}} >Become a professional in just 25 weeks!</h4>
    <Row> <br /><hr />
   <Col>
@@ -24,7 +25,7 @@ const Student = () => {
   <Card.Body className="test">
     <Card.Title>Finance  & Accounting</Card.Title>
     <Card.Text style={{color: "#18183d"}}>
-    90% employment rate according to the market.
+    90% employment rate according to brainly.
     </Card.Text>   
 
   <style type="text/css">
@@ -46,7 +47,7 @@ const Student = () => {
   </style>
 
   <Button variant="flat" size="sm">
-    Take Course
+    Read More
   </Button>
 
 </Card.Body>
@@ -58,13 +59,13 @@ const Student = () => {
   <Card.Body className="test">
     <Card.Title>Software Engineering</Card.Title>
     <Card.Text style={{color: "#18183d"}}>
-    92.1% employment rate according to the market.
+    92.1% employment rate according to ilostat.
     </Card.Text>   
     
  
 
   <Button variant="flat" size="sm">
-    Take Course
+    Read More
   </Button>
 
 </Card.Body>
@@ -76,12 +77,12 @@ const Student = () => {
   <Card.Body className="test">
     <Card.Title>Data <br></br> Science</Card.Title>
     <Card.Text style={{color: "#18183d"}}>
-    89% employment rate according to the market.
+    89% employment rate according to investopedia.
     </Card.Text>   
     
 
   <Button variant="flat" size="sm">
-    Take Course
+    Read More
   </Button>
 
 </Card.Body>

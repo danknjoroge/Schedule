@@ -7,23 +7,6 @@ import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <div className='footer-container'>
-      <section className='footer-subscription'>
-       
-        <p className='footer-subscription-text' style={{marginLeft: "30%"}}>
-          Subscribe for course updates
-        </p>
-        <div className='input-areas'>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Enter Your Email Here...'
-            />
-            {/* <Button buttonStyle='btn--outline' style={{display: "inline"}}>Subscribe</Button> */}
-          </form>
-        </div>
-      </section>
       <div class='footer-links'>
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>

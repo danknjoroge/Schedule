@@ -19,16 +19,16 @@ function Login ({login, isAuthenticated, isStudent}) {
      }
     
      if (isAuthenticated && isStudent){
-        return <Redirect to="/" />
+        return <Redirect to="/student" />
     }else if(isAuthenticated && !isStudent){
         return<Redirect to="/staff" />
     }else{  
   return (
     <div>
-         <div className='container mb-5' style={{marginTop: "15%"}}>
+         <div className='container mb-5' style={{marginTop: "10%", backgroundColor: "#18183d", width: "40%", borderRadius: "30px 30px 0 30px", height: "300px", color: "#f9f9f9" }}>
             
             <div className='row'>
-                <div className='col-md-6 mx-auto'>
+                <div className='col-md-6 mx-auto' style={{paddingTop:"20px"}}>
                 <h2>Sign In</h2>
                     <form onSubmit={(e)=>handleLoginSubmit(e)}>
                     <div className="form-group mb-3">
@@ -44,10 +44,10 @@ function Login ({login, isAuthenticated, isStudent}) {
                         <input type="password" 
                         className="form-control"
                         onChange={ e =>loginChange(e)} 
-                        placeholder="username..." 
+                        placeholder="password..." 
                         name="password"  value={password}/>
                     </div>
-                    <button className='btn btn-primary'>Login</button>
+                    <button className='btn btn-transparent text-white' style={{border: "1px solid #fff", textAlign: "right", transition: "0.4s all ease in-out"}}>Login</button>
                     </form>
                 </div>
             </div>

@@ -29,24 +29,12 @@ function Cards() {
               path='/announcement'
             />
           </ul>
-          <ul className='cards__items'>
+          <ul className='cards__items_session'>
             <CardItem
               src='images/school2.jpg'
               text='Check out all students sessions for the module'
               label='Sessions'
               path='/session'
-            />
-            <CardItem
-              src='images/student3.jpg'
-              text='A list of all courses we offer'
-              label='Courses'
-              path='/staff'
-            />
-            <CardItem
-              src='images/school4.jpg'
-              text='See all, read all, know all'
-              label='All activities'
-              path='/'
             />
 
           </ul>

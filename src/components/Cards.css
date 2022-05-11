@@ -7,6 +7,10 @@
   background: #efefef;
 }
 
+.cards__items_session{
+  width: 35%;
+}
+
 .activity {
   margin: 2px auto;
   font-family: 'Ubuntu', sans-serif;
