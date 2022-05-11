@@ -41,6 +41,13 @@ const Staff = () => {
 <div className='repo-container'>
       <ListLoading isLoading={appState.loading} staff={appState.staff} />
     </div> 
+    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Secondary card title</h5>
+    <ListLoading isLoading={appState.loading} staff={appState.staff} />
+  </div>
+</div>
     <footer>
       <div className='footer'>
         Built with {' '}
