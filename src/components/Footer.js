@@ -9,7 +9,7 @@ function Footer() {
     <div className='footer-container'>
       <section className='footer-subscription'>
        
-        <p className='footer-subscription-text'>
+        <p className='footer-subscription-text' style={{marginLeft: "30%"}}>
           Subscribe for course updates
         </p>
         <div className='input-areas'>
@@ -20,7 +20,7 @@ function Footer() {
               type='email'
               placeholder='Enter Your Email Here...'
             />
-            <Button buttonStyle='btn--outline' style={{display: "inline"}}>Subscribe</Button>
+            {/* <Button buttonStyle='btn--outline' style={{display: "inline"}}>Subscribe</Button> */}
           </form>
         </div>
       </section>

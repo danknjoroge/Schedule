@@ -19,7 +19,7 @@ function Login ({login, isAuthenticated, isStudent}) {
      }
     
      if (isAuthenticated && isStudent){
-        return <Redirect to="/student" />
+        return <Redirect to="/" />
     }else if(isAuthenticated && !isStudent){
         return<Redirect to="/staff" />
     }else{  
