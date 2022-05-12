@@ -1,8 +1,15 @@
 import React from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
+import {useSelector, useDispatch} from 'react-redux';
+
 
 function Cards() {
+
+  const auth= useSelector((state) => state.auth)
+  const dispatch=useDispatch()
+  console.log(auth);
+
   return (
     <div className='cards'>
       <h1 className='activity'>All Activities</h1>
@@ -20,6 +27,7 @@ function Cards() {
               src='images/student2.jpg'
               text='Register students, make announcements and more'
               label='Sessions'
+              
               path='/sesion'
             />
             <CardItem
