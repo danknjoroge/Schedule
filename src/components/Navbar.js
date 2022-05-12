@@ -43,10 +43,11 @@ function Navbar() {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+            
           {auth.isAuthenticated ?<>
             <li className='nav-item'>
               <Link to='/announcements' className='nav-links' onClick={closeMobileMenu}>
-                Annuncements
+                Announcements
               </Link>
             </li>
             <li className='nav-item'>
@@ -62,6 +63,16 @@ function Navbar() {
                 onClick={closeMobileMenu}
               >
                 Profile
+              </Link>
+            </li>
+
+            <li className='nav-item'>
+              <Link
+                to='/sesion'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Schedule
               </Link>
             </li>
            </>: <>
