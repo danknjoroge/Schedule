@@ -46,7 +46,7 @@ export default function App() {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" style={{border: "1px solid #fff", color: "#f9f9f9"}}href="/session">Add Events</Button>
+          <Button size="small" style={{border: "1px solid #fff", color: "#f9f9f9"}}href="/sesion">Add Events</Button>
         </CardActions>
       </Card>
       </div>
@@ -125,7 +125,7 @@ export default function App() {
           </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small" style={{border: "1px solid #fff", color: "#f9f9f9"}}href="/newstudent">Add New Student</Button>
+        <Button size="small" style={{border: "1px solid #fff", color: "#f9f9f9"}}href="/signin">Add New Student</Button>
     
         </CardActions>
       </Card>

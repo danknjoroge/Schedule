@@ -19,8 +19,8 @@ function Cards() {
             <CardItem
               src='images/student2.jpg'
               text='Register students, make announcements and more'
-              label='Staff Dashboard'
-              path='/staff'
+              label='Sessions'
+              path='/sesion'
             />
             <CardItem
               src='images/school1.jpg'
@@ -29,15 +29,7 @@ function Cards() {
               path='/announcement'
             />
           </ul>
-          <ul className='cards__items_session'>
-            <CardItem
-              src='images/school2.jpg'
-              text='Check out all students sessions for the module'
-              label='Sessions'
-              path='/sesion'
-            />
 
-          </ul>
         </div>
       </div>
     </div>

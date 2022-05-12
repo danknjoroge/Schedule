@@ -33,8 +33,8 @@ const StudentSignup = ({create_studentuser, isAuthenticated,isStudent}) => {
         return <Redirect to="/student"/>
     }
     return (
-        <div className='container'>
-            <h2>signup as a student</h2>
+        <div className='container' style={{marginTop: "10%"}}>
+            <h2 class="text-center">Add Student</h2>
             <div className='row'>
                 <div className='col-md-8 mx-auto'>
                     <form onSubmit={ e =>handleSubmit(e)}>
