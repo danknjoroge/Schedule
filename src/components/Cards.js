@@ -34,7 +34,7 @@ function Cards() {
               src='images/school2.jpg'
               text='Check out all students sessions for the module'
               label='Sessions'
-              path='/session'
+              path='/sesion'
             />
 
           </ul>
