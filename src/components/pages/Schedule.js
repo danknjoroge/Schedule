@@ -1,9 +1,13 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import {useSelector, useDispatch} from 'react-redux';
 import { Button, Form } from "react-bootstrap";
 import API from "./API";
+import './Schedule.css';
+import './Comments.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {  Modal } from 'react-bootstrap';
 
 
 const AddSchedule = () => {
@@ -12,6 +16,10 @@ const AddSchedule = () => {
   const [time, setTime] = useState("");
   const [sheduleId, setSheduleId] = useState(null);
   const [shedules, setShedules] = useState([]);
+
+  const auth= useSelector((state) => state.auth)
+  const dispatch=useDispatch()
+  console.log(auth);
 
   useEffect(() => {
     refreshShedules();
@@ -24,15 +32,23 @@ const AddSchedule = () => {
       })
       .catch(console.error);
   };
+  
   const onSubmit = (e) => {
     e.preventDefault();
+    // e.target.reset();
     let item = { day, details, time };
     API.post("/", item).then(() => refreshShedules());
+    setDay("")
+    setDetails("")
+    setTime("")
   };
 
   const onUpdate = (id) => {
-    let item = { day };
+    let item = { day, details, time };
     API.patch(`/${id}/`, item).then((res) => refreshShedules());
+    setDay("")
+    setDetails("")
+    setTime("")
   };
 
   const onDelete = (id) => {
@@ -47,16 +63,29 @@ const AddSchedule = () => {
   }
 
 
+  const [isOpen, setIsOpen] = React.useState(false);
+  const showModal = () => {
+    setIsOpen(true);
+  };
+  const hideModal = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div>
-        <div className="container mt-5" style={{background}}>
+        <div className="container mt-5" >
       <div className="row">
-        <div className="col-md-4">
-          <h3 className="float-left">Add A New Shedule </h3>
-          <Form onSubmit={onSubmit} className="mt-4">
-            <Form.Group className="mb-3" controlId="formBasicDay">
-              <Form.Label>{sheduleId}Shedule Day</Form.Label>
+      {auth.isStudent ? null:<>
+        <div className="col-md-4 mt-5 fom">
+        
+        <Button onClick={showModal} className='btn btn-primary'> Add a New Schedule</Button>
+        <Modal show={isOpen} onHide={hideModal}>
+        <Modal.Header>
+          <Modal.Title><h1>New Schedule </h1></Modal.Title>
+        </Modal.Header>
+          <Form onSubmit={onSubmit} className="mt-4" style={{padding:'10px',backgroundColor:'whitesmoke'}}>
+            <Form.Group className="mb-3 " controlId="formBasicDay">
+              <Form.Label>{sheduleId}Schedule Day</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter The Day"
@@ -66,7 +95,7 @@ const AddSchedule = () => {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicDetails">
-              <Form.Label>Details</Form.Label>
+              <Form.Label>Activity</Form.Label>
               <Form.Control
                 type="textarea"
                 placeholder="Enter Details"
@@ -95,6 +124,7 @@ const AddSchedule = () => {
                 Save
               </Button>
               <Button
+              onClick={showModal} 
                 variant="primary"
                 type="button"
                 onClick={() => onUpdate(sheduleId)}
@@ -102,53 +132,80 @@ const AddSchedule = () => {
               >
                 Update
               </Button>
+              <Button
+                variant="danger"
+                type="button"
+                onClick={hideModal}
+                className="mx-2"
+              >
+                Close
+              </Button>
             </div>
           </Form>
+          </Modal>
+
         </div>
-        <div className="col-md-8 m">
-          <table class="table">
+        </>}
+        <div className="col-md-12 mt-5">
+          <div className='row'>
+            <div  className="col-md-2" ></div>
+            <div  className="col-md-8">
+            
+            <h3>The Schedule</h3>
+          <table class="table mt-4">
             <thead>
               <tr>
                 <th scope="col"></th>
                 <th scope="col">Day</th>
-                <th scope="col">Details</th>
+                <th scope="col">Activity</th>
                 <th scope="col">Time</th>
-                <th scope="col"></th>
+                {/* <th scope="col"></th> */}
               </tr>
             </thead>
             <tbody>
               {shedules.map((shedule, index) => {
                 return (
-                  <tr key="">
+                  <tr  key="">
                     <th scope="row">{shedule.id}</th>
                     <td> {shedule.day}</td>
-                    <td>{shedule.details}</td>
+                    <td className='edit'>{shedule.details}</td>
                     <td>{shedule.time}</td>
                     <td>
-                        <button onClick={() => selectShedule(shedule.id)}>Edit</button>
-                        <button onClick={() => onDelete(shedule.id)}>Delete</button>
-                        
-                      <i
-                        className="fa fa-pencil-square text-primary d-inline"
-                        aria-hidden="true"
-                        onClick={() => selectShedule(shedule.id)}
-                      ></i>
-                      <i
-                        className="fa fa-trash-o text-danger d-inline mx-3"
-                        aria-hidden="true"
-                        onClick={() => onDelete(shedule.id)}
-                      ></i>
+                    {auth.isStudent ? null: <>
+                      <Button
+                variant="secondary"
+                type="button"
+               
+                onClick={() => selectShedule(shedule.id)} 
+                className="mx-2"
+              >
+                Edit
+                      </Button>
+                      <Button
+                        variant="danger"
+                        type="button"
+                        onClick={() => onDelete(shedule.id)} 
+                        className="mx-2"
+                      >
+                        Delete
+                      </Button>
+                      </>}
+                    
                     </td>
                   </tr>
                 );
               })}
             </tbody>
-          </table>
+          </table></div>
+            <div  className="col-md-2"></div>
+
+          </div>
+         
         </div>
       </div>
     </div>
     </div>
-  )
-}
+  );
+};
 
-export default AddSchedule
+export default AddSchedule;

@@ -63,7 +63,7 @@ export const logout=()=>(dispatch, getState)=>{
     if(token){
         config.headers['Authorization']= `Token ${token}`
     }
-    axios.post('https://neapi.herokuapp.com/api/logout/', null, config)
+    axios.post('http://127.0.0.1:8000/api/logout/', null, config)
     .then(res =>{
         dispatch({
             type:LOGOUT_SUCCESS
