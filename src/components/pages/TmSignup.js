@@ -33,7 +33,7 @@ const TmSignup = ({create_tmuser, isAuthenticated, isStudent}) => {
         return <Redirect to="/tm/dashboard" />
     } 
     return (
-        <div className='container'>
+        <div className='container' style={{marginTop: "10%"}}>
             <h2>signup and start Teaching</h2>
             <div className='row'>
                 <div className='col-md-8 mx-auto'>
