@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: "http://127.0.0.1:8000/api/shedule/shedule/",
+    baseURL: "https://neapi.herokuapp.com/api/shedule/shedule/",
     headers: {
         'Accept':'application/json',
         'Content-Type':'application/json',

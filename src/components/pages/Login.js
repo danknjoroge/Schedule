@@ -19,13 +19,13 @@ function Login ({login, isAuthenticated, isStudent}) {
      }
     
      if (isAuthenticated && isStudent){
-        return <Redirect to="/student" />
+        return <Redirect to="/" />
     }else if(isAuthenticated && !isStudent){
         return<Redirect to="/staff" />
     }else{  
   return (
     <div>
-         <div className='container mb-5'>
+         <div className='container mb-5' style={{marginTop: "15%"}}>
             
             <div className='row'>
                 <div className='col-md-6 mx-auto'>

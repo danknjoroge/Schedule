@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import {useSelector, useDispatch} from 'react-redux';
 import { Button, Form } from "react-bootstrap";
 import API from "./API";
+import './Schedule.css';
+
 
 
 const AddSchedule = () => {
@@ -28,19 +30,23 @@ const AddSchedule = () => {
       })
       .catch(console.error);
   };
-  // const onSub=(e)=>{
-  //   e.target.reset();
-  // }
+  
   const onSubmit = (e) => {
     e.preventDefault();
     // e.target.reset();
     let item = { day, details, time };
     API.post("/", item).then(() => refreshShedules());
+    setDay("")
+    setDetails("")
+    setTime("")
   };
 
   const onUpdate = (id) => {
-    let item = { day };
+    let item = { day, details, time };
     API.patch(`/${id}/`, item).then((res) => refreshShedules());
+    setDay("")
+    setDetails("")
+    setTime("")
   };
 
   const onDelete = (id) => {
@@ -60,8 +66,10 @@ const AddSchedule = () => {
     <div>
         <div className="container mt-5">
       <div className="row">
-        <div className="col-md-4">
-          <h3 className="float-left">Add A New Shedule </h3>
+      {auth.isStudent ? null:<>
+        <div className="col-md-4 mt-5 fom">
+        
+          <h3 className="float-left mt-4">Add A New Shedule </h3>
           <Form onSubmit={onSubmit} className="mt-4">
             <Form.Group className="mb-3" controlId="formBasicDay">
               <Form.Label>{sheduleId}Shedule Day</Form.Label>
@@ -74,7 +82,7 @@ const AddSchedule = () => {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicDetails">
-              <Form.Label>Details</Form.Label>
+              <Form.Label>Activity</Form.Label>
               <Form.Control
                 type="textarea"
                 placeholder="Enter Details"
@@ -112,14 +120,17 @@ const AddSchedule = () => {
               </Button>
             </div>
           </Form>
+          
         </div>
-        <div className="col-md-8 m">
-          <table class="table">
+        </>}
+        <div className="col-md-12 mt-5">
+          <h3>The Schedule</h3>
+          <table class="table mt-4">
             <thead>
               <tr>
                 <th scope="col"></th>
                 <th scope="col">Day</th>
-                <th scope="col">Details</th>
+                <th scope="col">Activity</th>
                 <th scope="col">Time</th>
                 <th scope="col"></th>
               </tr>
@@ -132,13 +143,27 @@ const AddSchedule = () => {
                     <td> {shedule.day}</td>
                     <td>{shedule.details}</td>
                     <td>{shedule.time}</td>
-                    {auth.isTm ? <>
                     
-                    </>:<></>}
                     <td>
-                       
-                    <button onClick={() => selectShedule(shedule.id)}>Edit</button>
-                      <button onClick={() => onDelete(shedule.id)}>Delete</button>
+                    {auth.isStudent ? null: <>
+                      <Button
+                variant="secondary"
+                type="button"
+                onClick={() => selectShedule(shedule.id)} 
+                className="mx-2"
+              >
+                Edit
+              </Button>
+              <Button
+                variant="danger"
+                type="button"
+                onClick={() => onDelete(shedule.id)} 
+                className="mx-2"
+              >
+                Delete
+              </Button>
+                      </>}
+                    
                     </td>
                   </tr>
                 );

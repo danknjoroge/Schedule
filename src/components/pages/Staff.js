@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'  
 import List from './List';
 import withListLoading from './withListLoading';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -34,6 +36,8 @@ const Staff = () => {
   <Card.Link style={{color: "white"}}href="/student">Courses</Card.Link>   
   <h6>Students</h6>
   <Card.Link style={{color: "white"}}href="/sessions">Sessions</Card.Link> 
+  
+  
 
 
 </Col>

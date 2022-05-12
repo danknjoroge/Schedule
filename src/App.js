@@ -13,6 +13,7 @@ import Announcement from './components/pages/Announcement';
 // import {GoogleLogin} from 'react-google-login';
 import Comments from './components/pages/Comments';
 import Schedule from './components/pages/Schedule';
+import Sesion from './components/pages/Sesion';
 // import AddSchedule from './components/pages/AddSchedule';
 
 
@@ -45,7 +46,10 @@ class App extends Component {
           <Route path='/login' component={Login} />
           <Route path='/session' component={Session} />
           <Route path='/staff' component={Staff} />
+
           <Route path='/schedule' component={Schedule} />
+          <Route exact path='/sesion' component={Sesion} />
+
           <Route path='/profile' component={Profile} />
           <Announcement announcements={this.state.announcements} />
           <Session sessions={this.state.sessions} />
