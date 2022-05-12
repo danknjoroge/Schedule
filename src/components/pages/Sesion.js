@@ -254,7 +254,12 @@ const Sesion = () => {
                         <Button
                           variant="secondary"
                           type="button"
-                          onClick={() => selectSession(session.id)}
+                          onClick={
+                            () =>{
+                              selectSession(session.id)
+                              showModal()
+                             } 
+                                 }
                           className="mx-2"
                         >
                           Edit

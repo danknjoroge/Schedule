@@ -30,7 +30,7 @@ const StudentSignup = ({create_studentuser, isAuthenticated,isStudent}) => {
     create_studentuser(newStudent)
    }
     if(isAuthenticated && isStudent){
-        return <Redirect to="/student"/>
+        return <Redirect to="/staff"/>
     }
     return (
         <div className='container'>
@@ -75,7 +75,7 @@ const StudentSignup = ({create_studentuser, isAuthenticated,isStudent}) => {
                                  onChange={(e)=>handleChange(e)}
                                  />
                         </div>
-                        <button type="submit" className="btn btn-primary">Signup</button>
+                        <button type="submit" className="btn btn-primary">ADD</button>
                     </form>
                 </div>
             </div>

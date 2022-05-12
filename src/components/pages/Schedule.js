@@ -175,8 +175,12 @@ const AddSchedule = () => {
                       <Button
                 variant="secondary"
                 type="button"
-               
-                onClick={() => selectShedule(shedule.id)} 
+                onClick={
+                  () =>{
+                    selectShedule(shedule.id)
+                    showModal()
+                   } 
+                       }
                 className="mx-2"
               >
                 Edit
