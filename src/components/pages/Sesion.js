@@ -7,6 +7,9 @@ import API from "./APL";
 import './session.css';
 import {  Modal } from 'react-bootstrap';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
+import  { Redirect } from 'react-router-dom'
+
 
 
 const Sesion = () => {
@@ -242,7 +245,8 @@ const Sesion = () => {
                       <h4>Date</h4>
                       <Card.Subtitle > {moment(session.date).utc().format('YYYY-MM-DD')} from, {session.time}</Card.Subtitle><br/>
                       <h4>Time</h4>
-                      <a className="btn btn-primary" href="{session.link}">Join Session</a>
+                      <a className="btn btn-primary" target='_blank' href={session.link} >Join Session</a>
+              
                       {/* <Button variant="primary">Go somewhere</Button> */}
                     </Card.Body>
                     <Card.Footer className="bg-default ">
