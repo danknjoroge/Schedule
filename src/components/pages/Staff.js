@@ -31,7 +31,7 @@ export default function App() {
             Google Calendar
           </Typography>
           <Typography variant="h5" component="h2">
-            How are you ?
+            Create events
           </Typography>
           <Typography
             style={{
@@ -39,10 +39,10 @@ export default function App() {
             }}
             color="textSecondary"
           >
-            Keep Motivated
+            create sessions
           </Typography>
           <Typography variant="body2" component="p">
-            Stay Happy
+            schedule events and
           </Typography>
         </CardContent>
         <CardActions>
@@ -164,7 +164,7 @@ export default function App() {
           </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small" style={{border: "1px solid #fff", color: "#f9f9f9"}}href="/announcements">Comment on posts</Button>
+        <Button size="small" style={{border: "1px solid #fff", color: "#f9f9f9"}}href="/schedule">Create Schedules</Button>
     
         </CardActions>
       </Card>

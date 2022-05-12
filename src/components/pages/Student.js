@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from 'react-grid-system';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card'  
-import './Student.css'
+import Card from 'react-bootstrap/Card';
+import './Student.css';
 
 const Student = () => {
     return (

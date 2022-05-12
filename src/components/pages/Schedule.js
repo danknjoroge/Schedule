@@ -50,7 +50,7 @@ const AddSchedule = () => {
 
   return (
     <div>
-        <div className="container mt-5">
+        <div className="container mt-5" style={{background}}>
       <div className="row">
         <div className="col-md-4">
           <h3 className="float-left">Add A New Shedule </h3>

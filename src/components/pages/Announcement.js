@@ -30,14 +30,14 @@ const Announcement = () => {
 
 <Row>   
 <Col className="announcement"  sm={2} style={{background: "#18183D",height: "760px", color:"white", overflow: 'hidden',position:"fixed", marginTop: "5.0rem"}}>
-  <hr />
   <h3 style={{marginLeft: "30px", marginTop: "15%"}}>All</h3>
-  <hr />
-  <Card.Link style={{color: "white", textDecoration: "none", marginLeft: "30px", fontSize: "20px"}}href="/students">Students</Card.Link> <hr />
-<h6><a style={{color: "white",textDecoration:"none", marginLeft: "30px", fontSize: "20px"}}href="/comments">Comments</a></h6><hr />
+  {/* <Card.Link style={{color: "white", textDecoration: "none",  marginLeft: "30px"}}href="/student">Courses</Card.Link>    */}
+  {/* <h6>Students</h6> */} <br />
+  <Card.Link style={{color: "white", textDecoration: "none", marginLeft: "30px"}}href="/student">Students Page</Card.Link> 
+<h6><a style={{color: "white",textDecoration:"none", marginLeft: "30px"}}href="/comments">Comments</a></h6>
 
 </Col>
-<Col style={{marginTop: "7%"}} sm={10}><h2 style={{marginLeft: "21%", color: "#fff", opacity: "0.7"}}>| Announcements</h2>
+<Col sm={10}><h2>| Announcements</h2>
 <div className='repo-container' style={{marginLeft: "20%", marginTop: "5%"}}>
       <ListLoading isLoading={appState.loading} announcements={appState.announcements} />
     </div> 

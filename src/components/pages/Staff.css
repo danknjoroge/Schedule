@@ -5,3 +5,7 @@ body {
 .col-md-4{
   display: inline;
 }
+
+.container > .Card {
+  text-align: center;
+}
