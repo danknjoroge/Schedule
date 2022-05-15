@@ -41,16 +41,15 @@ const Announcement = () => {
 <Container fluid>
 
 
-<Row>   
-<Col className="announcement"  sm={2} style={{background: "#18183D",height: "760px", color:"white", overflow: 'hidden',position:"fixed", marginTop: "5.0rem"}}>
-{auth.isAuthenticated ?<>
+<Row className='mt-5'>   
+<Col className="announcement"  sm={2} style={{background: "#18183D",height: "800px", color:"white", overflow: 'hidden',position:"fixed", }}>
             <li style={{listStyleType: "none"}} className='nav-item'> <hr />
-              <Link to='/announcements' className='nav-links' onClick={closeMobileMenu}>
-                Notifications
+              <Link to='/announcements' className='nav-links' >
+                Announcements
               </Link>
             </li>
             <li style={{listStyleType: "none"}} className='nav-item'>  <hr />
-              <Link to='/sesion' className='nav-links' onClick={closeMobileMenu}>
+              <Link to='/sesion' className='nav-links' >
                 Sessions
               </Link>
             </li>
@@ -60,17 +59,38 @@ const Announcement = () => {
               <Link
                 to='/schedule'
                 className='nav-links'
-                onClick={closeMobileMenu}
+               
               >
                 Schedule
               </Link>
             </li> <hr />
-           </>: <>
+            <li className='nav-item' style={{listStyleType: "none"}}>
+            
+              {auth.isStudent ? null : <>
+                <Link to='/addstudent' className='nav-links' onClick={closeMobileMenu}>
+                Add Student
+              </Link>
+              
+           </>
+             }
 
-           </>}
+            </li>
+            <li className='nav-item' style={{listStyleType: "none"}}>
+            
+              {auth.isStudent ? null : <>
+                <Link to='/newannouncement' className='nav-links' onClick={closeMobileMenu}>
+                Add Announcement
+              </Link>
+              
+           </>
+             }
+
+            </li>
+         
 
 </Col>
-<Col sm={10}><h2>| Announcements</h2>
+<Col className='mt-5'  style={{marginLeft:'100px'}} sm={10}>
+  {/* <h2>| Announcements</h2> */}
 <div className='repo-container' style={{marginLeft: "20%", marginTop: "5%"}}>
       <ListLoading isLoading={appState.loading} announcements={appState.announcements} />
     </div> 

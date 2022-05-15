@@ -16,6 +16,7 @@ import Schedule from './components/pages/Schedule';
 import Sesion from './components/pages/Sesion';
 // import AddSchedule from './components/pages/AddSchedule';
 import Newstudent from './components/pages/Newstudent';
+import New from './components/pages/NewAnnouncements';
 
 
   
@@ -42,18 +43,18 @@ class App extends Component {
         <Navbar />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/announcements' component={StudentSignup} />
+          <Route path='/addstudent' component={StudentSignup} />
           <Route path='/announcement' component={Student} />
           <Route path='/login' component={Login} />
           <Route path='/session' component={Session} />
           <Route path='/staff' component={Staff} />
-
           <Route path='/schedule' component={Schedule} />
           <Route exact path='/sesion' component={Sesion} />
-
           <Route path='/profile' component={Profile} />
           <Route path='/comments' component={Comments} />
           <Route path='/newstudent' component={Newstudent} />
+          <Route path='/newannouncement' component={New} />
+
           <Announcement announcements={this.state.announcements} />
           <Session sessions={this.state.sessions} />
           <Staff staff={this.state.staff} />

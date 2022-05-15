@@ -3,8 +3,14 @@ import { connect } from 'react-redux'
 import  PropTypes from "prop-types"
 import { create_studentuser } from '../../actions/auth'
 import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import {useSelector, useDispatch} from 'react-redux';
+import {  Row, Col } from 'react-grid';
 
 const StudentSignup = ({create_studentuser, isAuthenticated,isStudent}) => {
+  const auth= useSelector((state) => state.auth)
+  const dispatch=useDispatch()
+  console.log(auth);
     const [student, setStudent]=useState({
         username:'',
         email:'',
@@ -33,8 +39,58 @@ const StudentSignup = ({create_studentuser, isAuthenticated,isStudent}) => {
         return <Redirect to="/staff"/>
     }
     return (
+    <Row className='mt-5'>   
+    <Col className="announcement"  sm={2} style={{background: "#18183D",height: "800px", color:"white", overflow: 'hidden',position:"fixed", }}>
+            <li style={{listStyleType: "none"}} className='nav-item'> <hr />
+              <Link to='/announcements' className='nav-links' >
+                Notifications
+              </Link>
+            </li>
+            <li style={{listStyleType: "none"}} className='nav-item'>  <hr />
+              <Link to='/sesion' className='nav-links' >
+                Sessions
+              </Link>
+            </li>
+          
+
+            <li style={{listStyleType: "none"}} className='nav-item'> <hr />
+              <Link
+                to='/schedule'
+                className='nav-links'
+               
+              >
+                Schedule
+              </Link>
+            </li> <hr />
+
+            <li className='nav-item' style={{listStyleType: "none"}}>
+            
+              {auth.isStudent ? null : <>
+                <Link to='/addstudent' className='nav-links' >
+                Add Student
+              </Link>
+              
+           </>
+             }
+
+            </li>
+            <li className='nav-item' style={{listStyleType: "none"}}>
+            
+              {auth.isStudent ? null : <>
+                <Link to='/newannouncement' className='nav-links' >
+                Add Announcement
+              </Link>
+              
+           </>
+             }
+
+            </li>
+         
+
+</Col>
+<Col className=''  style={{marginLeft:'100px'}} sm={10}>
         <div className='container' style={{marginTop: "10%"}}>
-            <h2 class="text-center">Add Student</h2>
+            <h2 class="text-center fw-bold">| Add Student</h2>
             <div className='row'>
                 <div className='col-md-8 mx-auto'>
                     <form onSubmit={ e =>handleSubmit(e)}>
@@ -75,11 +131,13 @@ const StudentSignup = ({create_studentuser, isAuthenticated,isStudent}) => {
                                  onChange={(e)=>handleChange(e)}
                                  />
                         </div>
-                        <button type="submit" className="btn btn-primary">ADD</button>
+                        <button type="submit" style={{backgroundColor: "#18183D",color:'white',fontWeight:'bold'}} className="btn ">ADD</button>
                     </form>
                 </div>
             </div>
         </div>
+        </Col>
+    </Row>
     )
 }
 

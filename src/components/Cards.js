@@ -21,20 +21,20 @@ function Cards() {
               src='images/student1.jpg'
               text='Join the family'
               label='Students Dashboard'
-              path='/student'
+              path='/login'
             />
             <CardItem
               src='images/student2.jpg'
               text='Register students, make announcements and more'
               label='Sessions'
               
-              path='/sesion'
+              path='/login'
             />
             <CardItem
               src='images/school1.jpg'
               text='See notifications here'
               label='Announcements'
-              path='/announcement'
+              path='/login'
             />
           </ul>
 

@@ -6,8 +6,10 @@ import { Button, Form } from "react-bootstrap";
 import API from "./API";
 import './Schedule.css';
 import './Comments.css';
+import {  Row, Col } from 'react-grid';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {  Modal } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 const AddSchedule = () => {
@@ -72,13 +74,64 @@ const AddSchedule = () => {
   };
 
   return (
-    <div>
-        <div className="container mt-5" >
+    <Row className='mt-5'> 
+    <Col className="announcement"  sm={2} style={{background: "#18183D",height: "800px", color:"white", overflow: 'hidden',position:"fixed", }}>
+            <li style={{listStyleType: "none"}} className='nav-item'> <hr />
+              <Link to='/announcements' className='nav-links' >
+                Announcements
+              </Link>
+            </li>
+            <li style={{listStyleType: "none"}} className='nav-item'>  <hr />
+              <Link to='/sesion' className='nav-links' >
+                Sessions
+              </Link>
+            </li>
+          
+
+            <li style={{listStyleType: "none"}} className='nav-item'> <hr />
+              <Link
+                to='/schedule'
+                className='nav-links'
+               
+              >
+                Schedule
+              </Link>
+            </li> <hr />
+
+            <li className='nav-item' style={{listStyleType: "none"}}>
+            
+              {auth.isStudent ? null : <>
+                <Link to='/addstudent' className='nav-links' >
+                Add Student
+              </Link>
+              
+           </>
+             }
+
+            </li>
+            <li className='nav-item' style={{listStyleType: "none"}}>
+            
+              {auth.isStudent ? null : <>
+                <Link to='/newannouncement' className='nav-links' >
+                Add Announcement
+              </Link>
+              
+           </>
+             }
+
+            </li>
+         
+
+</Col>
+<Col className='mt-3'  style={{marginLeft:'100px',height: "800px"}} sm={10}>
+
+    <div style={{marginLeft:'300px'}}>
+        <div className="container" >
       <div className="row">
       {auth.isStudent ? null:<>
         <div className="col-md-4 mt-5 fom">
         
-        <Button onClick={showModal} className='btn btn-primary'> Add a New Schedule</Button>
+        <Button onClick={showModal} className='btn' style={{backgroundColor: "#18183D",color:'white',fontWeight:'bold'}}> Add a New Schedule</Button>
         <Modal show={isOpen} onHide={hideModal}>
         <Modal.Header>
           <Modal.Title><h1>New Schedule </h1></Modal.Title>
@@ -116,7 +169,8 @@ const AddSchedule = () => {
 
             <div className="float-right">
               <Button
-                variant="primary"
+                variant=""
+                style={{backgroundColor: "#18183D",color:'white',fontWeight:'bold'}}
                 type="submit"
                 onClick={onSubmit}
                 className="mx-2"
@@ -125,7 +179,8 @@ const AddSchedule = () => {
               </Button>
               <Button
               onClick={showModal} 
-                variant="primary"
+                variant=""
+                style={{backgroundColor: "#18183D",color:'white',fontWeight:'bold'}}
                 type="button"
                 onClick={() => onUpdate(sheduleId)}
                 className="mx-2"
@@ -148,10 +203,10 @@ const AddSchedule = () => {
         </>}
         <div className="col-md-12 mt-5">
           <div className='row'>
-            <div  className="col-md-2" ></div>
-            <div  className="col-md-8">
+            {/* <div  className="col-md-2" ></div> */}
+            <div  className="col-md-12">
             
-            <h3>The Schedule</h3>
+            <h3 className="fw-bold"> | The Schedule</h3>
           <table class="table mt-4">
             <thead>
               <tr>
@@ -173,7 +228,9 @@ const AddSchedule = () => {
                     <td>
                     {auth.isStudent ? null: <>
                       <Button
-                variant="secondary"
+                variant=""
+                style={{backgroundColor: "#18183D",color:'white',fontWeight:'bold'}}
+
                 type="button"
                 onClick={
                   () =>{
@@ -209,6 +266,8 @@ const AddSchedule = () => {
       </div>
     </div>
     </div>
+    </Col>
+    </Row>
   );
 };
 

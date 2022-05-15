@@ -9,6 +9,8 @@ import {  Modal } from 'react-bootstrap';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import  { Redirect } from 'react-router-dom'
+import {  Row, Col } from 'react-grid';
+
 
 
 
@@ -81,14 +83,65 @@ const Sesion = () => {
 
 
   return (
-    <div className='mt-5 '>
+    <Row className='mt-2'>   
+    <Col className="announcement mt-4"  sm={2} style={{background: "#18183D",height: "800px", color:"white", overflow: 'hidden',position:"fixed", }}>
+            <li style={{listStyleType: "none"}} className='nav-item'> <hr />
+              <Link to='/announcements' className='nav-links' >
+                Announcements
+              </Link>
+            </li>
+            <li style={{listStyleType: "none"}} className='nav-item'>  <hr />
+              <Link to='/sesion' className='nav-links' >
+                Sessions
+              </Link>
+            </li>
+          
+
+            <li style={{listStyleType: "none"}} className='nav-item'> <hr />
+              <Link
+                to='/schedule'
+                className='nav-links'
+               
+              >
+                Schedule
+              </Link>
+            </li> <hr />
+
+            <li className='nav-item' style={{listStyleType: "none"}}>
+            
+              {auth.isStudent ? null : <>
+                <Link to='/addstudent' className='nav-links' >
+                Add Student
+              </Link>
+              
+           </>
+             }
+
+            </li>
+            <li className='nav-item' style={{listStyleType: "none"}}>
+            
+              {auth.isStudent ? null : <>
+                <Link to='/newannouncement' className='nav-links' >
+                Add Announcement
+              </Link>
+              
+           </>
+             }
+
+            </li>
+         
+
+</Col>
+<Col className=''  style={{marginLeft:'240px'}} sm={10}>
+
+    <div className=''>
         <div className="container mt-5">
       <div className="row  page">
 
       {auth.isStudent ? null:<>
         <div className="col-md-4 mt-5 ">
 
-        <Button onClick={showModal} className='btn btn-primary '> Add a New Session</Button>
+        <Button onClick={showModal} className='btn' style={{backgroundColor: "#18183D",color:'white',fontWeight:'bold'}}> Add a New Session</Button>
 
         <Modal show={isOpen} onHide={hideModal}>
         <Modal.Header>
@@ -147,7 +200,8 @@ const Sesion = () => {
 
             <div className="float-right">
               <Button
-                variant="primary"
+                variant=""
+                style={{backgroundColor: "#18183D",color:'white',fontWeight:'bold'}}
                 type="submit"
                 onClick={onSubmit}
                 className="mx-2"
@@ -155,7 +209,8 @@ const Sesion = () => {
                 Save
               </Button>
               <Button
-                variant="primary"
+                variant=""
+                style={{backgroundColor: "#18183D",color:'white',fontWeight:'bold'}}
                 type="button"
                 onClick={() => onUpdate(sessionId)}
                 className="mx-2"
@@ -176,7 +231,7 @@ const Sesion = () => {
 
         </div>
         </>}
-        <h3 className=" mt-4m title text-center">Available Sessions </h3>
+        <h3 className=" mt-4m title text-left fw-bold">| Available Sessions </h3>
 
         {/* <div className="col-md-8 mt-5"> */}
           <div className="row">
@@ -245,14 +300,16 @@ const Sesion = () => {
                       <h4>Date</h4>
                       <Card.Subtitle > {moment(session.date).utc().format('YYYY-MM-DD')} from, {session.time}</Card.Subtitle><br/>
                       <h4>Time</h4>
-                      <a className="btn btn-primary" target='_blank' href={session.link} >Join Session</a>
+                      <a className="btn "                 style={{backgroundColor: "#18183D",color:'white',fontWeight:'bold'}}
+ target='_blank' href={session.link} >Join Session</a>
               
                       {/* <Button variant="primary">Go somewhere</Button> */}
                     </Card.Body>
                     <Card.Footer className="bg-default ">
                     {auth.isStudent ? null : <>
                         <Button
-                          variant="secondary"
+                          variant=""
+                          style={{backgroundColor: "#18183D",color:'white',fontWeight:'bold'}}
                           type="button"
                           onClick={
                             () =>{
@@ -286,7 +343,9 @@ const Sesion = () => {
       </div>
       </div>
     </div>
-    // </div>
+    </Col>
+    
+  </Row>
   )
 }
 

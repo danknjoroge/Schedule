@@ -44,33 +44,50 @@ function Navbar() {
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             
-          {auth.isAuthenticated ?<>
+          {auth.isAuthenticated ?
+          <>
             <li className='nav-item'>
             {/* <Link to='/announcements' className='nav-links' onClick={closeMobileMenu}>
                 Add Student
               </Link> */}
 
-              {auth.isStudent ? null : <>
-                <Link to='/announcements' className='nav-links' onClick={closeMobileMenu}>
+              {/* {auth.isStudent ? null : <>
+                <Link to='/addstudent' className='nav-links' onClick={closeMobileMenu}>
                 Add Student
               </Link>
-      </>}
+              
+           </>
+             } */}
 
             </li>
             <li className='nav-item'>
-              <Link to='/sesion' className='nav-links' onClick={closeMobileMenu}>
-                Sessions
+            {/* <Link to='/announcements' className='nav-links' onClick={closeMobileMenu}>
+                Add Student
+              </Link> */}
+
+              {/* {auth.isStudent ? null : <>
+                <Link to='/newannouncement' className='nav-links' onClick={closeMobileMenu}>
+                Add Announcement
               </Link>
+              
+           </>
+             } */}
+
+            </li>
+            <li className='nav-item'>
+              {/* <Link to='/sesion' className='nav-links' onClick={closeMobileMenu}>
+                Sessions
+              </Link> */}
             </li>
 
             <li className='nav-item'>
-              <Link
+              {/* <Link
                 to='/schedule'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
                 Schedule
-              </Link>
+              </Link> */}
             </li>
            </>: <>
            <li className='nav-item' style={{position: "absolute", top:"0", marginLeft: "68%"}}>
