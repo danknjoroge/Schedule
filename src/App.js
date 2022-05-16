@@ -42,7 +42,7 @@ class App extends Component {
       <Router>
         <Navbar />
         <Switch>
-          <Route path='/' exact component={Home} />
+          <Route exact path='/' exact component={Home} />
           <Route path='/addstudent' component={StudentSignup} />
           <Route path='/announcement' component={Student} />
           <Route path='/login' component={Login} />

@@ -33,7 +33,7 @@ function Navbar() {
   return (
     <>
       <nav className='navbar' style={{ position: "fixed", width: "100%" }}>
-        <div className='navbar-container' style={{marginLeft: "3%"}}>
+        <div className='navbar-container' style={{marginLeft: ""}}>
         <i class="fa fa-home text-white"></i> &nbsp;
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           
@@ -90,7 +90,7 @@ function Navbar() {
               </Link> */}
             </li>
            </>: <>
-           <li className='nav-item' style={{position: "absolute", top:"0", marginLeft: "68%"}}>
+           <li className='nav-item' style={{position: "absolute", top:"0", marginLeft: "55%"}}>
               <Link
                 to='/login'
                 className='nav-links btn-login'

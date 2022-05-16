@@ -18,20 +18,20 @@ function Cards() {
    
           <ul className='cards__items'>
             <CardItem
-              src='images/student1.jpg'
+              src='./images/student1.jpg'
               text='Join the family'
               label='Students Dashboard'
               path='/login'
             />
             <CardItem
-              src='images/student2.jpg'
+              src='./images/student2.jpg'
               text='Register students, make announcements and more'
               label='Sessions'
               
               path='/login'
             />
             <CardItem
-              src='images/school1.jpg'
+              src='./images/school1.jpg'
               text='See notifications here'
               label='Announcements'
               path='/login'
